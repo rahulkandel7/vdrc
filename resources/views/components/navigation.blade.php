@@ -195,7 +195,7 @@
    </div>
 </div>
 
-<div class="w-full bg-[#5977E9]" x-data="{isNav:false}">
+<div class="w-full bg-[#5977E9] md:hidden" x-data="{isNav:false}">
     <div class="w-11/12 mx-auto flex justify-between items-center" >
         <img src="{{asset('images/logo.png')}}" class="w-52 my-2">
         <button @click="isNav=true">
