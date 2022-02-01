@@ -38,5 +38,11 @@ Route::name('programs.')->group(function() {
     Route::get('/currently-running-program', [FrontendController::class, 'currently'])->name('crp');
 });
 
+//publications Routing
+Route::name('publications.')->group(function() {
+    Route::get('/report', [FrontendController::class, 'report'])->name('report');
+    Route::get('/newsletter', [FrontendController::class, 'newsletter'])->name('newsletter');
+});
+
 
 require __DIR__.'/auth.php';

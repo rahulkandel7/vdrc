@@ -45,4 +45,14 @@ class FrontendController extends Controller
     {
         return view('programs.currently');
     }
+
+    public function report()
+    {
+        return view('publications.report');
+    }
+
+    public function newsletter()
+    {
+        return view('publications.newsletter');
+    }
 }

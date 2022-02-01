@@ -117,7 +117,7 @@
                     
                 </li>
 
-                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md {{request()->routeIs('publications.*') ? 'bg-[#000DF6] rounded-md' : ''}}" x-data="{isDrop: false}">
 
                     <div class="dropdown inline-block relative" >
 
@@ -128,13 +128,13 @@
 
                         <ul class=" absolute  text-[#5977E9] dark:text-zinc-200 font-normal text-sm pt-1 w-52 z-10 bg-slate-50 dark:bg-slate-700 shadow-lg"  x-show="isDrop"  @mouseover.outside="isDrop = false" x-cloak>
 
-                            <a href="#">
-                                <li class="px-4 py-2 bg-[#5977E9] text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('publications.report')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('publications.report') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Report
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('publications.newsletter')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('publications.newsletter') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Newsletter
                                 </li>
                             </a>
