@@ -45,7 +45,7 @@
                     
                 </li>
 
-                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md {{request()->routeIs('programs.*') ? 'bg-[#000DF6] rounded-md' : ''}}" x-data="{isDrop: false}">
 
                     <div class="dropdown inline-block relative" >
 
@@ -56,23 +56,23 @@
 
                         <ul class=" absolute  text-[#5977E9] dark:text-zinc-200 font-normal text-sm pt-1 w-52 z-10 bg-slate-50 dark:bg-slate-700 shadow-lg"  x-show="isDrop"  @mouseover.outside="isDrop = false" x-cloak>
 
-                            <a href="#">
-                                <li class="px-4 py-2 bg-[#5977E9] text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('programs.rmp')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('programs.rmp') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Resource Mobilization Program
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('programs.pwp')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('programs.pwp') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Promotion and Welfare Program
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('programs.pp')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('programs.pp') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Partnership Program
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('programs.crp')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('programs.crp') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Currently Running Programs
                                 </li>
                             </a>

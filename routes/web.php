@@ -30,4 +30,13 @@ Route::name('aboutus.')->group(function() {
     Route::get('/staff-members', [FrontendController::class, 'staff'])->name('sm');
 });
 
+//Programs Routing
+Route::name('programs.')->group(function() {
+    Route::get('/resource-mobilization-program', [FrontendController::class, 'resource'])->name('rmp');
+    Route::get('/promotion-and-welfare-programs', [FrontendController::class, 'promotion'])->name('pwp');
+    Route::get('/partnership-program', [FrontendController::class, 'partnership'])->name('pp');
+    Route::get('/currently-running-program', [FrontendController::class, 'currently'])->name('crp');
+});
+
+
 require __DIR__.'/auth.php';

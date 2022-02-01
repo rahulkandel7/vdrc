@@ -25,4 +25,24 @@ class FrontendController extends Controller
     {
         return view('aboutus.staff');
     }
+
+    public function resource()
+    {
+        return view('programs.resource');
+    }
+
+    public function promotion()
+    {
+        return view('programs.promotion');
+    }
+
+    public function partnership()
+    {
+        return view('programs.partnership');
+    }
+
+    public function currently()
+    {
+        return view('programs.currently');
+    }
 }

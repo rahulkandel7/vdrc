@@ -719,6 +719,9 @@ select {
 .grid {
   display: grid;
 }
+.contents {
+  display: contents;
+}
 .list-item {
   display: list-item;
 }
@@ -799,6 +802,12 @@ select {
 }
 .w-56 {
   width: 14rem;
+}
+.w-10\/12 {
+  width: 83.333333%;
+}
+.w-9\/12 {
+  width: 75%;
 }
 .max-w-xl {
   max-width: 36rem;
