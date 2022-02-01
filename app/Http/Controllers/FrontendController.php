@@ -55,4 +55,24 @@ class FrontendController extends Controller
     {
         return view('publications.newsletter');
     }
+
+    public function honorable()
+    {
+        return view('membership.honorable');
+    }
+
+    public function life()
+    {
+        return view('membership.life');
+    }
+
+    public function general()
+    {
+        return view('membership.general');
+    }
+
+    public function expresidents()
+    {
+        return view('membership.expresidents');
+    }
 }

@@ -81,7 +81,7 @@
                     
                 </li>
 
-                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md {{request()->routeIs('membership.*') ? 'bg-[#000DF6] rounded-md' : ''}}" x-data="{isDrop: false}">
 
                     <div class="dropdown inline-block relative" >
 
@@ -92,23 +92,23 @@
 
                         <ul class=" absolute  text-[#5977E9] dark:text-zinc-200 font-normal text-sm pt-1 w-52 z-10 bg-slate-50 dark:bg-slate-700 shadow-lg"  x-show="isDrop"  @mouseover.outside="isDrop = false" x-cloak>
 
-                            <a href="#">
-                                <li class="px-4 py-2 bg-[#5977E9] text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('membership.hm')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('membership.hm') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Honorable Members
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('membership.lm')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('membership.lm') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Life Members
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('membership.gm')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('membership.gm') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                    General Members
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('membership.ep')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('membership.ep') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Ex - Presidents
                                 </li>
                             </a>

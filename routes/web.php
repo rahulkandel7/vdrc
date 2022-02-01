@@ -44,5 +44,13 @@ Route::name('publications.')->group(function() {
     Route::get('/newsletter', [FrontendController::class, 'newsletter'])->name('newsletter');
 });
 
+//Membership Routing
+Route::name('membership.')->group(function() {
+    Route::get('/honorable-members', [FrontendController::class, 'honorable'])->name('hm');
+    Route::get('/life-members', [FrontendController::class, 'life'])->name('lm');
+    Route::get('/general-members', [FrontendController::class, 'general'])->name('gm');
+    Route::get('/ex-presidents', [FrontendController::class, 'expresidents'])->name('ep');
+});
+
 
 require __DIR__.'/auth.php';
