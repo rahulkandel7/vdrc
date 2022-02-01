@@ -1,13 +1,15 @@
-<div class="w-full bg-[#5977E9] dark:bg-zinc-800 hidden md:block">
+<div class="w-full bg-[#5977E9] dark:bg-gray-700 hidden md:block">
    <div class="w-11/12 mx-auto py-2">
         <div class=" flex justify-center mb-2">
             <img src="{{asset('images/logo.png')}}" class="w-80">
         </div>
         <div class="flex justify-center">
             <ul class="flex justify-end text-white text-md">
-                <x-nav-items values="Home" />
+                <a href="/" class="{{request()->routeIs('home') ? 'bg-[#000DF6] rounded-md' : ''}}">
+                    <x-nav-items values="Home"/>
+                </a>
 
-                <li class="px-4 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md {{request()->routeIs('aboutus.*') ? 'bg-[#000DF6] rounded-md' : ''}}" x-data="{isDrop: false}">
 
                     <div class="dropdown inline-block relative" >
 
@@ -18,23 +20,23 @@
 
                         <ul class=" absolute  text-[#5977E9] dark:text-zinc-200 font-normal text-sm pt-1 w-52 z-10 bg-slate-50 dark:bg-slate-700 shadow-lg"  x-show="isDrop"  @mouseover.outside="isDrop = false" x-cloak>
 
-                            <a href="#">
-                                <li class="px-4 py-2 bg-[#5977E9] text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('aboutus.introduction')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('aboutus.introduction') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Introduction
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('aboutus.os')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('aboutus.os') ? 'bg-[#5977E9] text-white' : ''}} hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
                                     Organizational Structure
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('aboutus.ec')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('aboutus.ec') ? 'bg-[#5977E9] text-white' : ''}} hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
                                     Executive Committee
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('aboutus.sm')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('aboutus.sm') ? 'bg-[#5977E9] text-white' : ''}} hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
                                     Staff Members
                                 </li>
                             </a>
@@ -43,7 +45,7 @@
                     
                 </li>
 
-                <li class="px-4 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
 
                     <div class="dropdown inline-block relative" >
 
@@ -79,7 +81,7 @@
                     
                 </li>
 
-                <li class="px-4 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
 
                     <div class="dropdown inline-block relative" >
 
@@ -115,7 +117,7 @@
                     
                 </li>
 
-                <li class="px-4 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
 
                     <div class="dropdown inline-block relative" >
 
@@ -142,7 +144,7 @@
                     
                 </li>
 
-                <li class="px-4 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
 
                     <div class="dropdown inline-block relative" >
 
@@ -168,8 +170,8 @@
                     
                 </li>
 
-                <x-nav-items values="Reserve Training Center" />
-                <x-nav-items values="Contact Us" />
+                <x-nav-items values="Reserve Training Center" rname='home' />
+                <x-nav-items values="Contact Us" rname='home'/>
 
                 <li>
                     <button id="theme-toggle" type="button" class="text-white dark:text-gray-400 hover:bg-[#000DF6] dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-md p-2.5">

@@ -32,7 +32,7 @@
         </style>
         @yield('css')
     </head>
-    <body class="font-sans antialiased dark:bg-zinc-800">
+    <body class="font-sans antialiased dark:bg-gray-800 dark:text-slate-300">
         <x-navigation></x-navigation>
 
         @yield('content')

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+//About US Routing
+Route::name('aboutus.')->group(function() {
+    Route::get('/introduction', [FrontendController::class, 'introduction'])->name('introduction');
+    Route::get('/organizational-structure', [FrontendController::class, 'organizational'])->name('os');
+    Route::get('/executive-committee', [FrontendController::class, 'executive'])->name('ec');
+    Route::get('/staff-members', [FrontendController::class, 'staff'])->name('sm');
+});
 
 require __DIR__.'/auth.php';

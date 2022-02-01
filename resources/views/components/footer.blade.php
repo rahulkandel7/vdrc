@@ -1,4 +1,4 @@
-<div class="w-full">
+<div class="w-full bg-zinc-100 dark:bg-gray-700">
     <div class="w-11/12 mx-auto">
         <div class="grid grid-cols-4 gap-x-10 py-10">
             <div class="dark:text-zinc-100">
