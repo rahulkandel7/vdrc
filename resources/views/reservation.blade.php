@@ -28,7 +28,7 @@
         </h1>
         <hr class="line dark:border-zinc-500 border-[#5977E9]">
         <form class="px-5">
-            <div class="grid grid-cols-2 my-2">
+            <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="name" class="w-full text-zinc-700 dark:text-zinc-300">Full Name</label>
                     <input type="text" name="name" id="name" class="w-full rounded-md dark:text-black  border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 my-2">
+            <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="address" class="w-full text-zinc-700 dark:text-zinc-300">Address</label>
                     <input type="text" name="address" id="address" class="w-full rounded-md border-zinc-600 dark:text-black dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 my-2">
+            <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="phone" class="w-full text-zinc-700 dark:text-zinc-300">Phone number</label>
                     <input type="text" name="phone" id="phone" class="w-full rounded-md dark:text-black  border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
@@ -61,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 my-2">
+            <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="reserveTo" class="w-full text-zinc-700 dark:text-zinc-300">Reserve To</label>
                     <input type="date" name="reserveTo" id="reserveTo" class="w-full dark:text-black  rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
@@ -80,7 +80,7 @@
             </div>
 
 
-            <div class="grid grid-cols-2 my-2">
+            <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Select Trainee</label>
                     <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
@@ -100,7 +100,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 my-2">
+            <div class="grid md:grid-cols-2 my-2">
 
                 <div class="px-5">
                     <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Female Participant</label>
@@ -124,7 +124,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 my-2">
+            <div class="grid md:grid-cols-2 my-2">
 
                 <div class="px-5">
                     <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Fooding</label>

@@ -177,7 +177,7 @@
                     <x-nav-items values="Contact Us"/>
                 </a>
 
-                <li>
+                <li class="mx-2">
                     <button id="theme-toggle" type="button" class="text-white dark:text-gray-400 hover:bg-[#000DF6] dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-md p-2.5">
                         <svg id="theme-toggle-dark-icon" class="hidden  w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                         <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
@@ -200,8 +200,10 @@
     </div>
     <div x-show="isNav" @click.away="isNav=false" x-cloak>
         <ul class=" text-white text-md">
-            <a href="/" class="{{request()->routeIs('home') ? 'bg-[#000DF6] rounded-md' : ''}}">
-                <x-nav-items values="Home"/>
+            <a href="/" class="">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md {{request()->routeIs('home') ? 'bg-[#000DF6] rounded-md' : ''}}">
+                    Home
+                </li>
             </a>
 
             <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md {{request()->routeIs('aboutus.*') ? 'bg-[#000DF6] rounded-md' : ''}}" x-data="{isDrop: false}">
@@ -366,13 +368,17 @@
             </li>
 
             <a href="{{route('reservation')}}" class="{{request()->routeIs('reservation') ? 'bg-[#000DF6] rounded-md' : ''}}">
-                <x-nav-items values="Reserve Training Center" />
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md {{request()->routeIs('reservation') ? 'bg-[#000DF6] rounded-md' : ''}}">
+                    Reserve Training Center
+                </li>
             </a>
             <a href="{{route('contact')}}" class="{{request()->routeIs('contact') ? 'bg-[#000DF6] rounded-md' : ''}}">
-                <x-nav-items values="Contact Us"/>
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md {{request()->routeIs('contact') ? 'bg-[#000DF6] rounded-md' : ''}}">
+                    Contact Us
+                </li>
             </a>
 
-            <li>
+            <li class="mx-2">
                 <button id="theme-toggle" type="button" class="text-white dark:text-gray-400 hover:bg-[#000DF6] dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-md p-2.5">
                     <svg id="theme-toggle-dark-icon" class="hidden  w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                     <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
