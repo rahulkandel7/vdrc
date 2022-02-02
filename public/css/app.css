@@ -916,6 +916,12 @@ select {
 .rounded-tr-full {
   border-top-right-radius: 9999px;
 }
+.rounded-tr-xl {
+  border-top-right-radius: 0.75rem;
+}
+.rounded-tr-3xl {
+  border-top-right-radius: 1.5rem;
+}
 .border {
   border-width: 1px;
 }
@@ -1376,6 +1382,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(66 96 218 / var(--tw-bg-opacity));
 }
+.hover\:bg-\[\#4663d8\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(70 99 216 / var(--tw-bg-opacity));
+}
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1656,6 +1666,10 @@ select {
 }
 @media (min-width: 768px) {
 
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -1668,8 +1682,44 @@ select {
     display: none;
   }
 
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:rounded-tr-full {
+    border-top-right-radius: 9999px;
+  }
+
+  .md\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 @media (min-width: 1024px) {
