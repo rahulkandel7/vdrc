@@ -60,6 +60,7 @@ Route::name('gallery.')->group(function() {
 });
 
 Route::get('/training-reservation', [FrontendController::class, 'reservation'])->name('reservation');
+Route::get('/contact-us', [FrontendController::class, 'contact'])->name('contact');
 
 
 require __DIR__.'/auth.php';

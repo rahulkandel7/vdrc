@@ -173,7 +173,9 @@
                 <a href="{{route('reservation')}}" class="{{request()->routeIs('reservation') ? 'bg-[#000DF6] rounded-md' : ''}}">
                     <x-nav-items values="Reserve Training Center" />
                 </a>
-                <x-nav-items values="Contact Us"/>
+                <a href="{{route('contact')}}" class="{{request()->routeIs('contact') ? 'bg-[#000DF6] rounded-md' : ''}}">
+                    <x-nav-items values="Contact Us"/>
+                </a>
 
                 <li>
                     <button id="theme-toggle" type="button" class="text-white dark:text-gray-400 hover:bg-[#000DF6] dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-md p-2.5">

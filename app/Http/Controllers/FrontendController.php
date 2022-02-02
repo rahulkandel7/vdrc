@@ -95,4 +95,9 @@ class FrontendController extends Controller
     {
         return view('reservation');
     }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }

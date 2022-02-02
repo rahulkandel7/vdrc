@@ -22,6 +22,11 @@
 
 @section('content')
     <div class="w-11/12 mx-auto shadow-sm py-5 shadow-gray-300 dark:shadow-gray-900 rounded my-4 ">
+        <h1 class="text-3xl py-4 px-2 font-semibold text-[#5977E9]">
+            <span class="border-l-4 border-[#5977E9] px-2"></span> 
+            Training Reservation
+        </h1>
+        <hr class="line dark:border-zinc-500 border-[#5977E9]">
         <form class="px-5">
             <div class="grid grid-cols-2 my-2">
                 <div class="px-5">
