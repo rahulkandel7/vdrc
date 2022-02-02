@@ -75,4 +75,24 @@ class FrontendController extends Controller
     {
         return view('membership.expresidents');
     }
+
+    public function photoGallery()
+    {
+        return view('gallery.photogallery');
+    }
+
+    public function videoGallery()
+    {
+        return view('gallery.videogallery');
+    }
+
+    public function photoView()
+    {
+        return view('gallery.photoview');
+    }
+
+    public function reservation()
+    {
+        return view('reservation');
+    }
 }

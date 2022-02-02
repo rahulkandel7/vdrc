@@ -447,9 +447,9 @@
 
     {{-- Reservation Button Start --}}
       <div class="fixed bottom-5 right-4 z-50">
-        <button class="px-4 py-2 bg-blue-800 hover:bg-[#5977E9] rounded-md shadow-md text-white font-semibold text-lg ">
+        <a  href="{{route('reservation')}}" class="px-4 py-2 bg-blue-800 hover:bg-[#5977E9] rounded-md shadow-md text-white font-semibold text-lg ">
           <i class="far fa-hand-point-up"></i> Click Here For Reservation
-        </button>
+        </a>
       </div>
     {{-- Reservation Button End --}}
 @endsection

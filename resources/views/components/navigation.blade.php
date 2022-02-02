@@ -144,7 +144,7 @@
                     
                 </li>
 
-                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md" x-data="{isDrop: false}">
+                <li class="px-4 mx-2 py-2 hover:bg-[#000DF6] hover:rounded-md {{request()->routeIs('gallery.*') ? 'bg-[#000DF6] rounded-md' : ''}}" x-data="{isDrop: false}">
 
                     <div class="dropdown inline-block relative" >
 
@@ -155,13 +155,13 @@
 
                         <ul class=" absolute  text-[#5977E9] dark:text-zinc-200 font-normal text-sm pt-1 w-52 z-10 bg-slate-50 dark:bg-slate-700 shadow-lg"  x-show="isDrop"  @mouseover.outside="isDrop = false" x-cloak>
 
-                            <a href="#">
-                                <li class="px-4 py-2 bg-[#5977E9] text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('gallery.pg')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('gallery.pg') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Photo Gallery
                                 </li>
                             </a>
-                            <a href="#">
-                                <li class="px-4 py-2 hover:bg-[#5977E9] hover:text-white shadow-sm shadow-[#5977E9]">
+                            <a href="{{route('gallery.vg')}}">
+                                <li class="px-4 py-2 {{request()->routeIs('gallery.vg') ? 'bg-[#5977E9] text-white' : ''}}  shadow-sm shadow-[#5977E9] hover:bg-[#5977E9] hover:text-white">
                                     Video Gallery
                                 </li>
                             </a>
@@ -170,8 +170,10 @@
                     
                 </li>
 
-                <x-nav-items values="Reserve Training Center" rname='home' />
-                <x-nav-items values="Contact Us" rname='home'/>
+                <a href="{{route('reservation')}}" class="{{request()->routeIs('reservation') ? 'bg-[#000DF6] rounded-md' : ''}}">
+                    <x-nav-items values="Reserve Training Center" />
+                </a>
+                <x-nav-items values="Contact Us"/>
 
                 <li>
                     <button id="theme-toggle" type="button" class="text-white dark:text-gray-400 hover:bg-[#000DF6] dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-md p-2.5">
