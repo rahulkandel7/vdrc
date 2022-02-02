@@ -110,4 +110,14 @@ class FrontendController extends Controller
     {
         return view('events.eventview');
     }
+
+    public function strategic()
+    {
+        return view('strategic');
+    }
+
+    public function cso()
+    {
+        return view('csco');
+    }
 }

@@ -67,4 +67,7 @@ Route::get('/events', [FrontendController::class, 'events'])->name('events');
 Route::get('/events-view/id', [FrontendController::class, 'eventsview'])->name('eventsview');
 
 
+Route::get('/strategic-partnership', [FrontendController::class, 'strategic'])->name('strategic');
+Route::get('/csos-role-instrumental-during-pandemic', [FrontendController::class, 'cso'])->name('cso');
+
 require __DIR__.'/auth.php';

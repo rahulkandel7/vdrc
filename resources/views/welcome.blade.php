@@ -91,21 +91,31 @@
                 <p class="text-md text-zinc-500 dark:text-zinc-300 py-2 text-justify">
                   Vijaya Development Resource Centre (VDRC-Nepal), initially known as Vijaya Youth Club, is a non-profit member-based social development organization. It has been working in the community development sector for the last 42 years with a vision of equitable, peaceful, affluent and inter-dependent society. Established as a local self-help group in 1979, it is now recognized as a national level NGO with multi-disciplinary human resources and good infrastructure facilities.
                 </p>
-                <div class="flex flex-wrap">
-                  <a href="{{route('aboutus.introduction')}}" class="px-4 mx-2 my-2 py-1 bg-[#5977E9] hover:bg-[#4663d8] rounded-md text-white">
-                    Introduction
+                <div class="">
+
+                    <a href="{{route('aboutus.introduction')}}" >
+                      <p class="px-4 mx-2  py-1 bg-[#5977E9] hover:bg-[#4663d8] rounded-md text-white">
+                        Introduction
+                      </p>
+                    </a>
+
+  
+                  <a href="{{route('aboutus.os')}}" >
+                    <p class="px-4 mx-2 py-1 my-2 bg-[#5977E9] hover:bg-[#4663d8] rounded-md text-white">
+                      Organizational Structure
+                    </p>
                   </a>
   
-                  <a href="{{route('aboutus.os')}}" class="px-4 mx-2 py-1 my-2 bg-[#5977E9] hover:bg-[#4663d8] rounded-md text-white">
-                    Organizational Structure
+                  <a href="{{route('aboutus.ec')}}" >
+                    <p class="px-4 mx-2 my-2 py-1 bg-[#5977E9] hover:bg-[#4663d8] rounded-md text-white">
+                      Executive Committee
+                    </p>
                   </a>
   
-                  <a href="{{route('aboutus.ec')}}" class="px-4 mx-2 my-2 py-1 bg-[#5977E9] hover:bg-[#4663d8] rounded-md text-white">
-                    Executive Committee
-                  </a>
-  
-                  <a href="{{route('aboutus.sm')}}" class="px-4 mx-2 my-2 py-1 bg-[#5977E9] hover:bg-[#4663d8] rounded-md text-white">
-                    Staff Members
+                  <a href="{{route('aboutus.sm')}}" >
+                    <p class="px-4 mx-2 my-2 py-1 bg-[#5977E9] hover:bg-[#4663d8] rounded-md text-white">
+                      Staff Members
+                    </p>
                   </a>
                   
                 </div>
@@ -116,6 +126,20 @@
                     Articles
                   </h1>
                   <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md md:text-lg list-disc list-inside">
+                    <li class="py-2">
+                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
+                        <span class="font-semibold">Article Name</span>
+                        <p class="text-sm px-5">Jul, 2020</p>
+                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                      </a>
+                    </li>
+                    <li class="py-2">
+                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
+                        <span class="font-semibold">Article Name</span>
+                        <p class="text-sm px-5">Jul, 2020</p>
+                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                      </a>
+                    </li>
                     <li class="py-2">
                       <a href="#" class="hover:text-blue-800 dark:hover:text-white">
                         <span class="font-semibold">Article Name</span>
@@ -151,7 +175,7 @@
           Vijaya Development Resource Centre (VDRC-Nepal) – a civil society organization based in Gaindakot-8, Nawalpur – has marked its 42nd establishment day amidst a virtual programme on 11th July, 2020. At a zoom-enabled social dialogue 'Accountable response/recovery of COVID-19 crisis: Role of Civil Society Organizations' held on 11th July, 2020 on the occasion, key note speaker, Hari Sharma, a noted social-political analyst, said the CSO role of questioning was always instrumental in protecting democracy, citizen freedoms and people's lives in any crisis including pandemic. "Democratic institutions and freedoms are always under attack in the pretexts of crisis and emergency. Social dialogue and consultations are a must to counter such assaults which demands the civic groups and organizations' role in raising questions against authorities", he stressed. As an intermediary force, the community-rooted and trusted CSOs can bridge the citizens and democracy through dialogue and deliberations, Sharma said, noting that the democratically communicated and engaged communities can exercise self-discipline and decision to fight against any pandemic such as COVID-19. "Germany and South Korea, among others, democratically took the people into confidence to tackle the pandemic and ...
         </p>
         <div class="flex justify-center my-5">
-          <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+          <a href="{{route('cso')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
             Read More
           </a>
         </div>

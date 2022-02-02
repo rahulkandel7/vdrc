@@ -46,6 +46,11 @@
                         </a>
                     </li>
                 </ul>
+                <div class="flex  my-5 text-md">
+                    <a href="{{route('strategic')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                      Show More
+                    </a>
+                  </div>
             </div>
 
             <div>
