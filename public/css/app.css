@@ -626,6 +626,9 @@ select {
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
+.m-2 {
+  margin: 0.5rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -683,11 +686,14 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
+.mt-1 {
+  margin-top: 0.25rem;
 }
 .mt-3 {
   margin-top: 0.75rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 .mr-1 {
   margin-right: 0.25rem;
@@ -697,9 +703,6 @@ select {
 }
 .mb-4 {
   margin-bottom: 1rem;
-}
-.mt-1 {
-  margin-top: 0.25rem;
 }
 .block {
   display: block;
@@ -754,6 +757,9 @@ select {
 }
 .h-20 {
   height: 5rem;
+}
+.h-60 {
+  height: 15rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -1077,6 +1083,18 @@ select {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1338,6 +1356,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(30 58 138 / var(--tw-bg-opacity));
 }
+.hover\:bg-\[\#4866df\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(72 102 223 / var(--tw-bg-opacity));
+}
 .hover\:bg-\[\#5977E9\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(89 119 233 / var(--tw-bg-opacity));
@@ -1350,9 +1372,9 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-.hover\:bg-\[\#4866df\]:hover {
+.hover\:bg-\[\#4260da\]:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(72 102 223 / var(--tw-bg-opacity));
+  background-color: rgb(66 96 218 / var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
@@ -1535,6 +1557,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(212 212 216 / var(--tw-text-opacity));
 }
+.dark .dark\:text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .dark .dark\:text-zinc-100 {
   --tw-text-opacity: 1;
   color: rgb(244 244 245 / var(--tw-text-opacity));
@@ -1546,10 +1572,6 @@ select {
 .dark .dark\:text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-.dark .dark\:text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .dark .dark\:shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);

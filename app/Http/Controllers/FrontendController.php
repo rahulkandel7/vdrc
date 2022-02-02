@@ -100,4 +100,14 @@ class FrontendController extends Controller
     {
         return view('contact');
     }
+
+    public function events()
+    {
+        return view('events.event');
+    }
+
+    public function eventsview()
+    {
+        return view('events.eventview');
+    }
 }
