@@ -120,4 +120,9 @@ class FrontendController extends Controller
     {
         return view('csco');
     }
+
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
 }

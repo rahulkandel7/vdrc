@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\MajoraccomplishmentController;
+use App\Http\Controllers\Admin\NoticeController;
+use App\Http\Controllers\Admin\RecentActivityController;
 use App\Http\Controllers\FrontendController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [FrontendController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 //About US Routing
 Route::name('aboutus.')->group(function() {
@@ -69,5 +73,20 @@ Route::get('/events-view/id', [FrontendController::class, 'eventsview'])->name('
 
 Route::get('/strategic-partnership', [FrontendController::class, 'strategic'])->name('strategic');
 Route::get('/csos-role-instrumental-during-pandemic', [FrontendController::class, 'cso'])->name('cso');
+
+//Admin Routing 
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
+    Route::resource('articles', ArticleController::class);
+    Route::post('/articles/delete',[\App\Http\Controllers\Admin\ArticleController::class,'delete'])->name('articles.delete');
+    Route::resource('notices', NoticeController::class);
+    Route::post('/notices/delete',[\App\Http\Controllers\Admin\NoticeController::class,'delete'])->name('notices.delete');
+    Route::resource('recentactivities', RecentActivityController::class);
+    Route::post('/recentactivities/delete',[\App\Http\Controllers\Admin\RecentActivityController::class,'delete'])->name('recentactivities.delete');
+    Route::resource('majoraccomplishments', MajoraccomplishmentController::class);
+    Route::post('/majoraccomplishments/delete',[\App\Http\Controllers\Admin\MajoraccomplishmentController::class,'delete'])->name('majoraccomplishments.delete');
+    Route::resource('events', EventController::class);
+    Route::post('/events/delete',[\App\Http\Controllers\Admin\EventController::class,'delete'])->name('events.delete');
+
+});
 
 require __DIR__.'/auth.php';
