@@ -109,6 +109,14 @@
                                      <i class="fas fa-users"></i> &nbsp;  Members
                                  </li>
                               </a>
+
+                              <a href="{{route('admin.publications.index')}}" class="block mt-1 ">
+                                <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                                {{(request()->routeIs('admin.publications.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                                transition-colors ease-in-out delay-100">
+                                    <i class="fas fa-books"></i> &nbsp;  Publications
+                                </li>
+                             </a>
              
                              
                               <form method="POST" action="{{ route('logout')}}">
@@ -187,6 +195,14 @@
                     {{(request()->routeIs('admin.memberships.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
                     transition-colors ease-in-out delay-100">
                         <i class="fas fa-users"></i> &nbsp;  Members
+                    </li>
+                 </a>
+
+                 <a href="{{route('admin.publications.index')}}" class="block mt-1 ">
+                    <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                    {{(request()->routeIs('admin.publications.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                    transition-colors ease-in-out delay-100">
+                        <i class="fas fa-books"></i> &nbsp;  Publications
                     </li>
                  </a>
 

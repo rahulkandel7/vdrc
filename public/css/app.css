@@ -1208,6 +1208,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(249 115 22 / var(--tw-bg-opacity));
 }
+.bg-amber-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+}
 .bg-emerald-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(16 185 129 / var(--tw-bg-opacity));
@@ -1585,6 +1589,10 @@ select {
 }
 .shadow-orange-300 {
   --tw-shadow-color: #fdba74;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.shadow-amber-200 {
+  --tw-shadow-color: #fde68a;
   --tw-shadow: var(--tw-shadow-colored);
 }
 .shadow-emerald-200 {
@@ -2017,6 +2025,10 @@ select {
 }
 .dark .dark\:shadow-indigo-800 {
   --tw-shadow-color: #3730a3;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.dark .dark\:shadow-amber-800 {
+  --tw-shadow-color: #92400e;
   --tw-shadow: var(--tw-shadow-colored);
 }
 .dark .dark\:shadow-emerald-800 {

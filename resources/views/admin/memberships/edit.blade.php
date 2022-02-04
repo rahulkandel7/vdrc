@@ -33,13 +33,13 @@
                 {{-- For Post --}}
                 <div class="mt-5">
                     <label for="post" class="block font-bold text-gray-600 dark:text-gray-200">Post</label>
-                    <input type="text" name="post" id="post" class="border-[#5976e970] border-2 rounded-md w-full focus:ring-transparent focus:border-[#5977E9] bg-transparent mt-2" required value="{{$membership->post}}">
+                    <input type="text" name="post" id="post" class="border-[#5976e970] border-2 rounded-md w-full focus:ring-transparent focus:border-[#5977E9] bg-transparent mt-2"  value="{{$membership->post}}">
                 </div>
 
                 {{-- For Email --}}
                     <div class="mt-5">
                         <label for="email" class="block font-bold text-gray-600 dark:text-gray-200">Email Address</label>
-                        <input type="email" name="email" id="email" class="border-[#5976e970] border-2 rounded-md w-full focus:ring-transparent focus:border-[#5977E9] bg-transparent mt-2" required value="{{$membership->email}}">
+                        <input type="email" name="email" id="email" class="border-[#5976e970] border-2 rounded-md w-full focus:ring-transparent focus:border-[#5977E9] bg-transparent mt-2"  value="{{$membership->email}}">
                     </div>
     
                     {{-- For Type --}}

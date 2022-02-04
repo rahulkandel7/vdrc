@@ -17,15 +17,15 @@
     <div class="flex-1">
         <div class="px-5 py-5">
             <h3 class="text-[#5977E9] text-4xl font-bold">
-                Members
+                Publications
             </h3>
             <hr>
     
-                <div class="w-44 h-32 mx-4 mt-4 p-2 shadow-md dark:shadow-indigo-800 rounded-md bg-indigo-500 shadow-indigo-200 hover:shadow-sm hover:cursor-pointer">
-                    <h2 class="text-xl font-bold text-white">No of Members</h2>
+                <div class="w-44 h-32 mx-4 mt-4 p-2 shadow-md dark:shadow-amber-800 rounded-md bg-amber-500 shadow-amber-200 hover:shadow-sm hover:cursor-pointer">
+                    <h2 class="text-xl font-bold text-white">No of Publicatios</h2>
                     <div class="flex justify-between">
-                        <i class="fa fa-newspaper fa-2x text-white opacity-70"></i>
-                    <h1 class="text-4xl font-bold text-right text-white mr-4">{{count($memberships)}}</h1>
+                        <i class="fas fa-books fa-2x text-white opacity-70"></i>
+                    <h1 class="text-4xl font-bold text-right text-white mr-4">{{count($publications)}}</h1>
                     </div>
                 </div>
 
@@ -50,27 +50,27 @@
                     $i = 0;
                 @endphp
     
-                @foreach ($memberships as $membership)
+                @foreach ($publications as $publication)
                     <tr>
                         <td class="text-gray-900 font-semibold px-5 border w-32 dark:text-white">
                             {{++$i}} 
                         </td>
                         <td class="text-gray-900 font-bold px-5 border dark:text-white">
-                            <a href="{{route('admin.memberships.show',$membership->id)}}" class="cursor-pointer">
-                                {{$membership->name}} 
+                            <a href="/storage/{{$publication->filepath}}" download class="cursor-pointer">
+                                {{$publication->name}} 
                             </a>
                         </td>
                         <td class="text-gray-900 font-bold px-5 border dark:text-white">
 
-                                {{$membership->type}} 
+                                {{$publication->type}} 
 
                         </td>
                         <td class="text-gray-600 font-semibold px-5 border w-32 py-2">
-                            <a href="{{ route('admin.memberships.edit', $membership->id) }}">
+                            <a href="{{ route('admin.publications.edit', $publication->id) }}">
                                 <i class="far fa-edit hover:text-blue-900 font-bold cursor-pointer text-xl dark:text-blue-300 dark:hover:text-blue-500"></i>
                             </a>
                             
-                            <button onclick="showdelete({{$membership->id}})">
+                            <button onclick="showdelete({{$publication->id}})">
                                 <i class="fas fa-trash hover:text-red-500 font-bold cursor-pointer text-xl ml-3 dark:text-red-300 dark:hover:text-red-600"></i>
                             </button>
                        
@@ -93,7 +93,7 @@
                                 <!-- Modal content -->
                                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                                 
-                                    <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" method="POST" action="{{route('admin.memberships.delete')}}">
+                                    <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" method="POST" action="{{route('admin.publications.delete')}}">
                                     @csrf
                                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white pt-6 mb-0 text-center">Are You Sure to Delete ?</h3>
                                         <p class="text-center mt-0 text-red-500">The action is irreversible</p>
@@ -113,7 +113,7 @@
             {{-- End Modal For Delete --}}
     
             <div class="fixed bottom-3 right-7">
-                <a href="{{ route('admin.memberships.create') }}">
+                <a href="{{ route('admin.publications.create') }}">
                     <div class="bg-[#5977E9] w-14 h-14 rounded-full bg-primary text-white text-lg cursor-pointer">
                         <div class="flex justify-center pt-5">
                                 <i class="fas fa-plus"></i>
