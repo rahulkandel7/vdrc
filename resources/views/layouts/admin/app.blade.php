@@ -45,10 +45,10 @@
 
             {{-- For Mobile Nav --}}
 
-                {{-- <div class="w-full md:hidden shadow-gray-300 shadow-md" x-data="{ isNav: false }">
+                <div class="w-full md:hidden shadow-gray-300 dark:shadow-gray-800 bg-blue-800 shadow-md" x-data="{ isNav: false }">
                     <div class="flex justify-between items-center">
                     <a href="/dashboard"><img src="{{ asset('images/logo.png') }}" width="200" alt="" class="p-5"></a>
-                        <a  class="mr-8" @click="isNav=true" ><i class="fa fa-bars fa-2x text-blue-400"></i></a>
+                        <a  class="mr-8" @click="isNav=true" ><i class="fa fa-bars text-lg text-blue-400"></i></a>
                     </div>
 
                     <div class="w-full px-8" x-show="isNav" @click.away ="isNav=false">
@@ -56,57 +56,75 @@
 
                            
                             <a href="{{ route('dashboard') }}" class="block mt-1">
-                                <li class="pl-4 text-lg py-2 font-semibold hover:bg-blue-300 hover:text-white-700
-                                {{(request()->routeIs('dashboard'))? "bg-blue-300 text-black" : "text-slate-300"}} 
+                                <li class="pl-4 text-lg py-2 font-semibold hover:bg-blue-300 hover:text-gray-700
+                                {{(request()->routeIs('dashboard'))? "bg-blue-600 text-white " : "text-slate-300"}} 
                                 transition-colors ease-in-out delay-100">
                                     <i class="fa fa-tachometer"></i> &nbsp; Dashboard
                                 </li>
                              </a>
-                             <a href="{{ route('admin.categories.index') }}" class="block mt-1 ">
+                             <a href="{{route('admin.articles.index')}}" class="block mt-1 ">
                                  <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
-                                 {{(request()->routeIs('admin.categories.*'))? "bg-blue-300 text-black dark:text-gray-700" : "text-slate-300"}} 
+                                 {{(request()->routeIs('admin.articles.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
                                  transition-colors ease-in-out delay-100">
-                                     <i class="fa fa-list"></i> &nbsp;  Categories
-                                 </li>
-                              </a>
-
-                              <a href="{{ route('admin.products.index') }}" class="block mt-1 ">
-                                <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
-                                {{(request()->routeIs('admin.products.index.*'))? "bg-blue-300 text-black dark:text-gray-700" : "text-slate-300"}} 
-                                transition-colors ease-in-out delay-100">
-                                    <i class="fas fa-boxes"></i> &nbsp;  Products
-                                </li>
-                             </a>
-             
-                              <a href="{{ route('admin.slideshows.index') }}" class="block mt-1 ">
-                                 <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
-                                 {{(request()->routeIs('admin.slideshows.*'))? "bg-blue-300 text-black dark:text-gray-700" : "text-slate-300"}} 
-                                 transition-colors ease-in-out delay-100">
-                                     <i class="fa fa-images"></i> &nbsp;  Slideshows
+                                     <i class="fa fa-newspaper"></i> &nbsp;  Articles
                                  </li>
                               </a>
              
-                              <a href="{{ route('admin.testonimals.index') }}" class="block mt-1 ">
+                              <a href="{{route('admin.notices.index')}}" class="block mt-1 ">
                                  <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
-                                 {{(request()->routeIs('admin.testonimals.*')) || (request()->routeIs('folder.*'))? "bg-blue-300 text-black dark:text-gray-700" : "text-slate-300"}} 
+                                 {{(request()->routeIs('admin.notices.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
                                  transition-colors ease-in-out delay-100">
-                                     <i class="fa fa-users"></i> &nbsp;  Testinomials
+                                     <i class="fas fa-copy"></i> &nbsp;  Notices
                                  </li>
                               </a>
              
-                             <form method="POST" action="{{ route('logout')}}">
-                                 @csrf
-                              <button type="submit" class="block mt-4 w-full -ml-12">
-                                 <li class="pl-4 text-lg py-2 text-slate-300 hover:bg-blue-300 hover:text-gray-700 transition-colors ease-in-out delay-100">
-                                     <i class="fa fa-sign-out"></i> &nbsp; Logout
+                              <a href="{{route('admin.recentactivities.index')}}" class="block mt-1 ">
+                                 <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                                 {{(request()->routeIs('admin.recentactivities.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                                 transition-colors ease-in-out delay-100">
+                                     <i class="fas fa-tasks"></i> &nbsp;  Recent Activity
                                  </li>
-                             </button>
-                             </form>
+                              </a>
+             
+                              <a href="{{route('admin.majoraccomplishments.index')}}" class="block mt-1 ">
+                                 <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                                 {{(request()->routeIs('admin.majoraccomplishments.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                                 transition-colors ease-in-out delay-100">
+                                     <i class="fas fa-clipboard-list"></i> &nbsp;  Major Accomplishment
+                                 </li>
+                              </a>
+             
+                              <a href="{{route('admin.events.index')}}" class="block mt-1 ">
+                                 <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                                 {{(request()->routeIs('admin.events.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                                 transition-colors ease-in-out delay-100">
+                                 <i class="fas fa-calendar"></i> &nbsp;  Events
+                                 </li>
+                              </a>
+             
+                              <a href="{{route('admin.memberships.index')}}" class="block mt-1 ">
+                                 <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                                 {{(request()->routeIs('admin.memberships.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                                 transition-colors ease-in-out delay-100">
+                                     <i class="fas fa-users"></i> &nbsp;  Members
+                                 </li>
+                              </a>
+             
                              
+                              <form method="POST" action="{{ route('logout')}}">
+                                @csrf
+                             <button type="submit" class="block mt-4 w-full ">
+                                <li class="pl-4 text-left text-lg py-2 text-slate-300 hover:bg-blue-300 hover:text-gray-700 transition-colors ease-in-out delay-100">
+                                    <i class="fa fa-sign-out"></i> &nbsp; Logout
+                                </li>
+                            </button>
+                            </form>
+
+
                            </ul>
                     </div>
 
-                </div> --}}
+                </div>
 
 
        <div class="w-full h-full flex">
@@ -144,7 +162,7 @@
                     <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
                     {{(request()->routeIs('admin.recentactivities.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
                     transition-colors ease-in-out delay-100">
-                        <i class="fas fa-copy"></i> &nbsp;  Recent Activity
+                        <i class="fas fa-tasks"></i> &nbsp;  Recent Activity
                     </li>
                  </a>
 
@@ -152,7 +170,7 @@
                     <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
                     {{(request()->routeIs('admin.majoraccomplishments.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
                     transition-colors ease-in-out delay-100">
-                        <i class="fas fa-copy"></i> &nbsp;  Major Accomplishment
+                        <i class="fas fa-clipboard-list"></i> &nbsp;  Major Accomplishment
                     </li>
                  </a>
 
@@ -160,7 +178,15 @@
                     <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
                     {{(request()->routeIs('admin.events.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
                     transition-colors ease-in-out delay-100">
-                        <i class="fas fa-copy"></i> &nbsp;  Events
+                    <i class="fas fa-calendar"></i> &nbsp;  Events
+                    </li>
+                 </a>
+
+                 <a href="{{route('admin.memberships.index')}}" class="block mt-1 ">
+                    <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                    {{(request()->routeIs('admin.memberships.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                    transition-colors ease-in-out delay-100">
+                        <i class="fas fa-users"></i> &nbsp;  Members
                     </li>
                  </a>
 
@@ -169,7 +195,7 @@
                 <form method="POST" action="{{ route('logout')}}">
                     @csrf
                  <button type="submit" class="block mt-4 w-full ">
-                    <li class="pl-4 text-lg py-2 text-slate-300 hover:bg-blue-300 hover:text-gray-700 transition-colors ease-in-out delay-100">
+                    <li class="pl-4 text-left text-lg py-2 text-slate-300 hover:bg-blue-300 hover:text-gray-700 transition-colors ease-in-out delay-100">
                         <i class="fa fa-sign-out"></i> &nbsp; Logout
                     </li>
                 </button>

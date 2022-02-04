@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\MajoraccomplishmentController;
+use App\Http\Controllers\Admin\MembershipController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\RecentActivityController;
 use App\Http\Controllers\FrontendController;
@@ -86,6 +87,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     Route::post('/majoraccomplishments/delete',[\App\Http\Controllers\Admin\MajoraccomplishmentController::class,'delete'])->name('majoraccomplishments.delete');
     Route::resource('events', EventController::class);
     Route::post('/events/delete',[\App\Http\Controllers\Admin\EventController::class,'delete'])->name('events.delete');
+    Route::resource('memberships', MembershipController::class);
+    Route::post('/memberships/delete',[\App\Http\Controllers\Admin\MembershipController::class,'delete'])->name('memberships.delete');
 
 });
 
