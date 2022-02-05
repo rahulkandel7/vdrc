@@ -117,6 +117,22 @@
                                     <i class="fas fa-books"></i> &nbsp;  Publications
                                 </li>
                              </a>
+
+                             <a href="{{route('admin.currentlyrunnings.index')}}" class="block mt-1 ">
+                                <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                                {{(request()->routeIs('admin.currentlyrunnings.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                                transition-colors ease-in-out delay-100">
+                                    <i class="fas fa-running"></i> &nbsp;  Currently Running Programs
+                                </li>
+                             </a>
+
+                             <a href="{{route('admin.videos.index')}}" class="block mt-1 ">
+                                <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                                {{(request()->routeIs('admin.videos.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                                transition-colors ease-in-out delay-100">
+                                    <i class="fas fa-video"></i> &nbsp;  Videos
+                                </li>
+                             </a>
              
                              
                               <form method="POST" action="{{ route('logout')}}">
@@ -203,6 +219,22 @@
                     {{(request()->routeIs('admin.publications.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
                     transition-colors ease-in-out delay-100">
                         <i class="fas fa-books"></i> &nbsp;  Publications
+                    </li>
+                 </a>
+
+                 <a href="{{route('admin.currentlyrunnings.index')}}" class="block mt-1 ">
+                    <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                    {{(request()->routeIs('admin.currentlyrunnings.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                    transition-colors ease-in-out delay-100">
+                        <i class="fas fa-running"></i> &nbsp;  Currently Running Programs
+                    </li>
+                 </a>
+
+                 <a href="{{route('admin.videos.index')}}" class="block mt-1 ">
+                    <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                    {{(request()->routeIs('admin.videos.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                    transition-colors ease-in-out delay-100">
+                        <i class="fas fa-video"></i> &nbsp;  Videos
                     </li>
                  </a>
 

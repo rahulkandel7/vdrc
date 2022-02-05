@@ -894,14 +894,14 @@ select {
 .w-9\/12 {
   width: 75%;
 }
-.w-44 {
-  width: 11rem;
-}
 .w-32 {
   width: 8rem;
 }
 .w-14 {
   width: 3.5rem;
+}
+.w-44 {
+  width: 11rem;
 }
 .w-10\/12 {
   width: 83.333333%;
@@ -1172,13 +1172,17 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
-.bg-pink-500 {
+.bg-teal-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+  background-color: rgb(20 184 166 / var(--tw-bg-opacity));
 }
 .bg-indigo-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+.bg-pink-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
 }
 .bg-slate-200 {
   --tw-bg-opacity: 1;
@@ -1199,6 +1203,10 @@ select {
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
+.bg-fuchsia-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 70 239 / var(--tw-bg-opacity));
 }
 .bg-indigo-500 {
   --tw-bg-opacity: 1;
@@ -1575,6 +1583,10 @@ select {
   --tw-shadow-color: #5976e977;
   --tw-shadow: var(--tw-shadow-colored);
 }
+.shadow-teal-200 {
+  --tw-shadow-color: #99f6e4;
+  --tw-shadow: var(--tw-shadow-colored);
+}
 .shadow-indigo-200 {
   --tw-shadow-color: #c7d2fe;
   --tw-shadow: var(--tw-shadow-colored);
@@ -1585,6 +1597,10 @@ select {
 }
 .shadow-\[\#5977E9\] {
   --tw-shadow-color: #5977E9;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.shadow-fuchsia-200 {
+  --tw-shadow-color: #f5d0fe;
   --tw-shadow: var(--tw-shadow-colored);
 }
 .shadow-orange-300 {
@@ -2019,8 +2035,16 @@ select {
   --tw-shadow-color: #374151;
   --tw-shadow: var(--tw-shadow-colored);
 }
+.dark .dark\:shadow-teal-800 {
+  --tw-shadow-color: #115e59;
+  --tw-shadow: var(--tw-shadow-colored);
+}
 .dark .dark\:shadow-gray-600 {
   --tw-shadow-color: #4b5563;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.dark .dark\:shadow-fuchsia-800 {
+  --tw-shadow-color: #86198f;
   --tw-shadow: var(--tw-shadow-colored);
 }
 .dark .dark\:shadow-indigo-800 {

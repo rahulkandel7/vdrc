@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\CurrentlyrunningController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\MajoraccomplishmentController;
 use App\Http\Controllers\Admin\MembershipController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\PublicationController;
 use App\Http\Controllers\Admin\RecentActivityController;
+use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\FrontendController;
 
 use Illuminate\Support\Facades\Route;
@@ -92,6 +94,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     Route::post('/memberships/delete',[\App\Http\Controllers\Admin\MembershipController::class,'delete'])->name('memberships.delete');
     Route::resource('publications', PublicationController::class);
     Route::post('/publications/delete',[\App\Http\Controllers\Admin\PublicationController::class,'delete'])->name('publications.delete');
+    Route::resource('currentlyrunnings', CurrentlyrunningController::class);
+    Route::post('/currentlyrunnings/delete',[\App\Http\Controllers\Admin\CurrentlyrunningController::class,'delete'])->name('currentlyrunnings.delete');
+    Route::resource('videos', VideoController::class);
+    Route::post('/videos/delete',[\App\Http\Controllers\Admin\VideoController::class,'delete'])->name('videos.delete');
 
 });
 
