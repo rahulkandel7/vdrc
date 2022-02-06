@@ -79,8 +79,9 @@ class RecentActivityController extends Controller
      * @param  \App\Models\RecentActivity  $recentActivity
      * @return \Illuminate\Http\Response
      */
-    public function edit(RecentActivity $recentActivity)
+    public function edit($id)
     {
+        $recentActivity = RecentActivity::findOrFail($id);
         return view('admin.recentactivities.edit',compact('recentActivity'));
     }
 
@@ -91,9 +92,34 @@ class RecentActivityController extends Controller
      * @param  \App\Models\RecentActivity  $recentActivity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RecentActivity $recentActivity)
+    public function update(Request $request, $id)
     {
-        //
+        $recentActivity = RecentActivity::findOrFail($id);
+        $data = $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'photopath' => 'nullable|image|mimes:png,jpg'
+        ]);
+
+
+        if($request->has('photopath')){
+            $fname = Str::random(20);
+            $fexe = $request->file('photopath')->extension();
+            $fpath = "$fname.$fexe";
+
+            $request->file('photopath')->storeAs('public/recentactivities', $fpath);
+
+            $data['photopath'] = 'recentactivities/'.$fpath;
+
+            if($recentActivity->photopath){
+                Storage::delete('public/'. $recentActivity->photopath);
+            }
+            
+        }
+
+        $recentActivity->update($data);
+
+        return redirect(route('admin.recentactivities.index'))->with('success', 'Recent Activity updated sucessfully');
     }
 
     /**

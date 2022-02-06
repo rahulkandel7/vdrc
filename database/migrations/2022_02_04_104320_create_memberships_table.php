@@ -18,6 +18,7 @@ class CreateMembershipsTable extends Migration
             $table->string('name');
             $table->string('photopath');
             $table->string('post')->nullable();
+            $table->string('address')->nullable();
             $table->string('email')->nullable();
             $table->string('type');
             $table->timestamps();

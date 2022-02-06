@@ -28,103 +28,48 @@
                 </h1>
                 <hr class="line dark:border-zinc-500 border-[#5977E9]">
                 <div class="flex flex-wrap justify-evenly">
+                  @foreach ($staffs as $staff)
                     <div class="w-56 shadow-lg rounded-md mx-3 my-4 images">
-                        <img src="{{asset('images/staff/1.jpeg')}}" class=" w-full h-56 rounded overflow-hidden">
+                        <img src="/storage/{{$staff->photopath}}" class=" w-full h-56 rounded overflow-hidden">
                         <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
-                            Mr. Keshab Prasad Sapkota
+                            {{$staff->name}}
                         </p>
                         <p class="text-center text-zinc-500">
-                            Executive Director
+                            {{$staff->post}}
+                        </p>
+                        <p class="text-center text-slate-700 dark:text-zinc-300">
+                            {{$staff->address}}
                         </p>
                         <p class="text-center text-slate-500 hover:text-black dark:hover:text-white">
-                            <a href="mailto:kpsapkota@vdrc.org.np">kpsapkota@vdrc.org.np</a>
+                            <a href="mailto:{{$staff->email}}">{{$staff->email}}</a>
                         </p>
                     </div>
-
-                    <div class="w-56 shadow-lg rounded-md mx-3 my-4 images">
-                        <img src="{{asset('images/staff/2.jpeg')}}" class=" w-full h-56 rounded overflow-hidden">
-                        <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
-                            Mr. Kalidash Gaudel
-                        </p>
-                        <p class="text-center text-zinc-500">
-                            Sr. Admin /Finance Officer
-                        </p>
-                        <p class="text-center text-slate-500 hover:text-black dark:hover:text-white">
-                            <a href="mailto:Kgaudel@vdrc.org.np">Kgaudel@vdrc.org.np</a>
-                        </p>
-                    </div>
-
-                    <div class="w-56 shadow-lg rounded-md mx-3 my-4 images">
-                        <img src="{{asset('images/staff/3.jpeg')}}" class=" w-full h-56 rounded overflow-hidden">
-                        <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
-                            Ms. Sharmila Khanal
-                        </p>
-                        <p class="text-center text-zinc-500">
-                            Admin/Finance Officer - Suaahara II
-                        </p>
-                        <p class="text-center text-slate-500 hover:text-black dark:hover:text-white">
-                            <a href="mailto:skhanal@vdrc.org.np">skhanal@vdrc.org.np</a>
-                        </p>
-                    </div>
-
-                    <div class="w-56 shadow-lg rounded-md mx-3 my-4 images">
-                        <img src="{{asset('images/staff/4.jpeg')}}" class=" w-full h-56 rounded overflow-hidden">
-                        <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
-                            Mr.Badri Nath Lamsal
-                        </p>
-                        <p class="text-center text-zinc-500">
-                            Coordinator - CHANGE
-                        </p>
-                       
-                        <p class="text-center text-slate-500 hover:text-black dark:hover:text-white">
-                            <a href="mailto:bnlamsal@vdrc.org.np">bnlamsal@vdrc.org.np</a>
-                        </p>
-                    </div>
-
-                    <div class="w-56 shadow-lg rounded-md mx-3 my-4 images">
-                        <img src="{{asset('images/staff/5.jpeg')}}" class=" w-full h-56 rounded overflow-hidden">
-                        <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
-                            Mr. Prem Prasad Raju
-                        </p>
-                        <p class="text-center text-zinc-500">
-                            Training Facilities Manager 
-                        </p>
-                        
-                        <p class="text-center text-slate-500 hover:text-black dark:hover:text-white">
-                            <a href="mailto:ppraju@vdrc.org.np">ppraju@vdrc.org.np</a>
-                        </p>
-                    </div>
-
-                    
+                  @endforeach
 
                 </div>
         
                 
             </div>
             <div>
-              <div class="px-8 my-5">
+              <div class="px-8 my-5 w-full">
                   <div class="shadow-lg shadow-blue-100 dark:shadow-gray-900 dark:shadow-md w-full rounded pb-2">
                     <h1 class="text-lg md:text-2xl py-2 border-l-8 border-[#d6da02] font-semibold bg-[#5977E9] text-left rounded-tr-full text-white  px-5">
                       Notices / Vacancy
                     </h1>
                     <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md list-disc list-inside">
-                      <li class="py-2">
-                        <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                          <span class="font-semibold">Article Name</span>
-                          <p class="text-sm px-5">Jul, 2020</p>
-                          <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                        </a>
-                      </li>
-                      <li class="py-2">
-                        <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                          <span class="font-semibold">Article Name</span>
-                          <p class="text-sm px-5">Jul, 2020</p>
-                          <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                        </a>
-                      </li>
+                      @foreach ($notices as $notice)
+                        <li class="py-2">
+                            <a href="/storage/{{$notice->filepath}}" class="hover:text-blue-800 dark:hover:text-white">
+                              <span class="font-semibold">{{$notice->title}}</span>
+                              <p class="text-sm px-5">{{ \Carbon\Carbon::parse($notice->created_at)->format('d F Y')}}</p>
+                              <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                            </a>
+                        </li>
+                      @endforeach
+                      
                     </ul>
                     <div class="flex justify-center my-5">
-                      <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                      <a href="{{route('notice')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                         Read More
                       </a>
                     </div>
@@ -137,23 +82,19 @@
                     Articles
                   </h1>
                   <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md list-disc list-inside">
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
+                    @foreach ($articles as $article)
+                        <li class="py-2">
+                            <a href="{{route('articlesview',$article->id)}}" class="hover:text-blue-800 dark:hover:text-white">
+                              <span class="font-semibold">{{$article->title}}</span>
+                              <p class="text-sm px-5">{{ \Carbon\Carbon::parse($article->created_at)->format('d F Y')}}</p>
+                              <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                            </a>
+                        </li>
+                      @endforeach
+                    
                   </ul>
                   <div class="flex justify-center my-5">
-                    <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                    <a href="{{route('articles')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                       Read More
                     </a>
                   </div>
@@ -166,23 +107,19 @@
                     Recent Activities
                   </h1>
                   <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md list-disc list-inside">
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
+                    @foreach ($recentactivities as $recentactivity)
+                        <li class="py-2">
+                            <a href="{{route('recentactivitiesview',$recentactivity->id)}}" class="hover:text-blue-800 dark:hover:text-white">
+                              <span class="font-semibold">{{$recentactivity->title}}</span>
+                              <p class="text-sm px-5">{{ \Carbon\Carbon::parse($recentactivity->created_at)->format('d F Y')}}</p>
+                              <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                            </a>
+                        </li>
+                      @endforeach
+                    
                   </ul>
                   <div class="flex justify-center my-5">
-                    <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                    <a href="{{route('recentactivities')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                       Read More
                     </a>
                   </div>

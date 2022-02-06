@@ -43,6 +43,7 @@ class MembershipController extends Controller
             'name' => 'required|string',
             'type' => 'required|string',
             'post' => 'nullable|string',
+            'address' => 'nullable|string',
             'email' => 'nullable|string',
             'photopath' => 'required|image|mimes:png,jpg'
         ]);
@@ -98,6 +99,7 @@ class MembershipController extends Controller
             'name' => 'required|string',
             'type' => 'required|string',
             'post' => 'nullable|string',
+            'address' => 'nullable|string',
             'email' => 'nullable|string',
             'photopath' => 'nullable|image|mimes:png,jpg'
         ]);

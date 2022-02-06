@@ -24,7 +24,7 @@
                 <div class="w-44 h-32 mx-4 mt-4 p-2 shadow-md dark:shadow-indigo-800 rounded-md bg-indigo-500 shadow-indigo-200 hover:shadow-sm hover:cursor-pointer">
                     <h2 class="text-xl font-bold text-white">No of Members</h2>
                     <div class="flex justify-between">
-                        <i class="fa fa-newspaper fa-2x text-white opacity-70"></i>
+                        <i class="fa fa-users fa-2x text-white opacity-70"></i>
                     <h1 class="text-4xl font-bold text-right text-white mr-4">{{count($memberships)}}</h1>
                     </div>
                 </div>

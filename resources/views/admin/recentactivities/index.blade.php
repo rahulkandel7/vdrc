@@ -24,7 +24,7 @@
             <div class="w-44 h-32 mx-4 mt-4 p-2 shadow-md  rounded-md bg-pink-500 hover:shadow-sm hover:cursor-pointer">
                 <h2 class="text-xl font-bold text-white">No of Recent Activity</h2>
                 <div class="flex justify-between">
-                    <i class="fas fa-boxes fa-2x text-white opacity-70"></i>
+                    <i class="fas fa-tasks fa-2x text-white opacity-70"></i>
                 <h1 class="text-4xl font-bold text-right text-white mr-4">{{count($recentactivities)}}</h1>
                 </div>
             </div>

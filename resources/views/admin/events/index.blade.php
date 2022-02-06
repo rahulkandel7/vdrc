@@ -24,7 +24,7 @@
                 <div class="w-44 h-32 mx-4 mt-4 p-2 shadow-md dark:shadow-emerald-800 rounded-md bg-emerald-500 shadow-emerald-200 hover:shadow-sm hover:cursor-pointer">
                     <h2 class="text-xl font-bold text-white">No of Events</h2>
                     <div class="flex justify-between">
-                        <i class="fa fa-newspaper fa-2x text-white opacity-70"></i>
+                        <i class="fas fa-calendar fa-2x text-white opacity-70"></i>
                     <h1 class="text-4xl font-bold text-right text-white mr-4">{{count($events)}}</h1>
                     </div>
                 </div>

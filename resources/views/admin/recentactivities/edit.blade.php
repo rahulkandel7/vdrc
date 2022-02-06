@@ -15,7 +15,8 @@
                 </p>
               @endif
     
-            <form method="post" action="{{route('admin.recentactivities.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('admin.recentactivities.update',$recentActivity->id)}}" enctype="multipart/form-data">
+                @method('put')
                 @csrf
                 {{-- For Recent Activity Title --}}
                 <div class="mt-5">
@@ -32,7 +33,7 @@
                 {{-- For description  --}}
                 <div class="mt-5">
                     <label for="description" class="block font-bold text-gray-600 dark:text-gray-200">Description</label>
-                    <textarea  name="description" id="description" class="editor border-0 w-full focus:ring-transparent focus:border-primary bg-transparent mt-2"></textarea>
+                    <textarea  name="description" id="description" class="editor border-0 w-full focus:ring-transparent focus:border-primary bg-transparent mt-2">{{$recentActivity->description}}</textarea>
                 </div>
     
     
@@ -41,7 +42,7 @@
                 
                 <div class="mt-4">
                     <button type="submit" class="px-6 py-1 border-0 shadow-sm hover:shadow-md bg-[#5977E9] hover:bg-[#3c56c0] rounded-md text-white">
-                        Add
+                        Update
                     </button>
                     
                     <button class="px-6 py-1 border-0 shadow-sm hover:shadow-md bg-red-500 hover:bg-red-600 rounded-md text-white mx-5">

@@ -3,6 +3,7 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 @endsection
 @section('main')
+@include('layouts.message')
     <div class="px-6 pt-6 flex-1">
         <div class="flex flex-col md:flex-row">
             <a href="{{route('admin.articles.index')}}" class="flex-1">

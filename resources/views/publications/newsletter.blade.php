@@ -21,61 +21,40 @@
                 <hr class="line dark:border-zinc-500 border-[#5977E9]">
         
                 <ul class="px-4 font-bold my-2 text-lg text-[#5977E9]  dark:text-zinc-400 list-inside list-decimal">
-                    <a href="" title="Download File">
+                    @foreach ($newsletters as $newsletter)
+                      <a href="/storage/{{$newsletter->filepath}}" download title="Download File">
                         <li  class="py-2 hover:text-zinc-500">
-                            Vijaya Dhowni 2020 
+                            {{$newsletter->name}}
                             <span>
-                                (Publised Date: 09, Nov 2020 ) 
+                                (Publised Date: {{ \Carbon\Carbon::parse($newsletter->created_at)->format('d F Y')}} ) 
                             </span>
-                         </li>
-                    </a>
-
-                    <a href="" title="Download File"  >
-                        <li class="py-2 hover:text-zinc-500">
-                            Vijaya Dhowni 2018 
-                            <span>
-                                (Publised Date: 09, Nov 2020 ) 
-                            </span>
-                         </li>
-                    </a>
-
-                    <a href="" title="Download File" >
-                        <li class="py-2 hover:text-zinc-500">
-                            Vijaya Dhoni 2017 
-                            <span>
-                                (Publised Date: 30, Oct 2018 ) 
-                            </span>
-                         </li>
-                    </a>
-
+                        </li>
+                      </a>
+                    @endforeach  
                     
                 </ul>
         
             </div>
             <div>
-              <div class="px-8 my-5">
+              <div class="px-8 my-5 w-full">
                   <div class="shadow-lg shadow-blue-100 dark:shadow-gray-900 dark:shadow-md w-full rounded pb-2">
                     <h1 class="text-lg md:text-2xl py-2 border-l-8 border-[#d6da02] font-semibold bg-[#5977E9] text-left rounded-tr-full text-white  px-5">
                       Notices / Vacancy
                     </h1>
                     <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md list-disc list-inside">
-                      <li class="py-2">
-                        <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                          <span class="font-semibold">Article Name</span>
-                          <p class="text-sm px-5">Jul, 2020</p>
-                          <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                        </a>
-                      </li>
-                      <li class="py-2">
-                        <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                          <span class="font-semibold">Article Name</span>
-                          <p class="text-sm px-5">Jul, 2020</p>
-                          <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                        </a>
-                      </li>
+                      @foreach ($notices as $notice)
+                        <li class="py-2">
+                            <a href="/storage/{{$notice->filepath}}" class="hover:text-blue-800 dark:hover:text-white">
+                              <span class="font-semibold">{{$notice->title}}</span>
+                              <p class="text-sm px-5">{{ \Carbon\Carbon::parse($notice->created_at)->format('d F Y')}}</p>
+                              <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                            </a>
+                        </li>
+                      @endforeach
+                      
                     </ul>
                     <div class="flex justify-center my-5">
-                      <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                      <a href="{{route('notice')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                         Read More
                       </a>
                     </div>
@@ -88,23 +67,19 @@
                     Articles
                   </h1>
                   <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md list-disc list-inside">
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
+                    @foreach ($articles as $article)
+                        <li class="py-2">
+                            <a href="{{route('articlesview',$article->id)}}" class="hover:text-blue-800 dark:hover:text-white">
+                              <span class="font-semibold">{{$article->title}}</span>
+                              <p class="text-sm px-5">{{ \Carbon\Carbon::parse($article->created_at)->format('d F Y')}}</p>
+                              <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                            </a>
+                        </li>
+                      @endforeach
+                    
                   </ul>
                   <div class="flex justify-center my-5">
-                    <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                    <a href="{{route('articles')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                       Read More
                     </a>
                   </div>
@@ -117,23 +92,19 @@
                     Recent Activities
                   </h1>
                   <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md list-disc list-inside">
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
+                    @foreach ($recentactivities as $recentactivity)
+                        <li class="py-2">
+                            <a href="{{route('recentactivitiesview',$recentactivity->id)}}" class="hover:text-blue-800 dark:hover:text-white">
+                              <span class="font-semibold">{{$recentactivity->title}}</span>
+                              <p class="text-sm px-5">{{ \Carbon\Carbon::parse($recentactivity->created_at)->format('d F Y')}}</p>
+                              <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                            </a>
+                        </li>
+                      @endforeach
+                    
                   </ul>
                   <div class="flex justify-center my-5">
-                    <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                    <a href="{{route('recentactivities')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                       Read More
                     </a>
                   </div>

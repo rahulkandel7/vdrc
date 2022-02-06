@@ -42,41 +42,17 @@
   {{-- Slideshow start --}}
      <div class="w-full">
       <div class="owl-carousel">
+        @foreach ($slideshows as $slideshow)
           <div class="item">
             <div class="relative">
-                  <img src="{{asset('images/slideshow/s1.jpeg')}}" class="h-[80vh] object-cover w-full ">
+                  <img src="/storage/{{$slideshow->photopath}}" class="h-[80vh] object-cover w-full ">
                   <p class="absolute bottom-12 bg-zinc-100 px-4 text-zinc-700 bg-opacity-80 rounded-md shadow ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi 
+                      {{$slideshow->title}}
                   </p>
             </div>
           </div>
+        @endforeach
 
-          <div class="item">
-            <div class="relative">
-                  <img src="{{asset('images/slideshow/s2.jpeg')}}" class="h-[80vh] object-cover w-full ">
-                  <p class="absolute bottom-12 bg-zinc-100 px-4 text-zinc-700 bg-opacity-80 rounded-md shadow ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi 
-                  </p>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="relative">
-                  <img src="{{asset('images/slideshow/s3.jpeg')}}" class="h-[80vh] object-cover w-full ">
-                  <p class="absolute bottom-12 bg-zinc-100 px-4 text-zinc-700 bg-opacity-80 rounded-md shadow ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi 
-                  </p>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="relative">
-                  <img src="{{asset('images/slideshow/s4.jpeg')}}" class="h-[80vh] object-cover w-full ">
-                  <p class="absolute bottom-12 bg-zinc-100 px-4 text-zinc-700 bg-opacity-80 rounded-md shadow ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi 
-                  </p>
-            </div>
-          </div>
         </div>
     </div>
   {{-- Slideshow end --}}
@@ -126,37 +102,19 @@
                     Articles
                   </h1>
                   <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md md:text-lg list-disc list-inside">
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
-                    <li class="py-2">
-                      <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                        <span class="font-semibold">Article Name</span>
-                        <p class="text-sm px-5">Jul, 2020</p>
-                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                      </a>
-                    </li>
+                    @foreach ($articles as $article)
+                      <li class="py-2">
+                        <a href="{{route('articlesview',$article->id)}}" class="hover:text-blue-800 dark:hover:text-white">
+                          <span class="font-semibold">{{$article->title}}</span>
+                          <p class="text-sm px-5">{{ \Carbon\Carbon::parse($article->created_at)->format('d F Y')}}</p>
+                          <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                        </a>
+                      </li>
+                    @endforeach
+                    
                   </ul>
                   <div class="flex justify-center my-5">
-                    <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                    <a href="{{route('articles')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                       Read More
                     </a>
                   </div>
@@ -192,23 +150,19 @@
                   Notices / Vacancy
                 </h1>
                 <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md md:text-lg list-disc list-inside">
-                  <li class="py-2">
-                    <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                      <span class="font-semibold">Article Name</span>
-                      <p class="text-sm px-5">Jul, 2020</p>
-                      <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                    </a>
-                  </li>
-                  <li class="py-2">
-                    <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                      <span class="font-semibold">Article Name</span>
-                      <p class="text-sm px-5">Jul, 2020</p>
-                      <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                    </a>
-                  </li>
+                  @foreach ($notices as $notice)
+                    <li class="py-2">
+                      <a href="/storage/{{$notice->filepath}}" class="hover:text-blue-800 dark:hover:text-white">
+                        <span class="font-semibold">{{$notice->title}}</span>
+                        <p class="text-sm px-5">{{\Carbon\Carbon::parse($notice->created_at)->format('d F Y')}}</p>
+                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                      </a>
+                    </li>
+                  @endforeach
+                  
                 </ul>
                 <div class="flex justify-center my-5">
-                  <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                  <a href="{{route('notice')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                     Read More
                   </a>
                 </div>
@@ -221,23 +175,19 @@
                   Recent Activities
                 </h1>
                 <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md md:text-lg list-disc list-inside">
-                  <li class="py-2">
-                    <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                      <span class="font-semibold">Article Name</span>
-                      <p class="text-sm px-5">Jul, 2020</p>
-                      <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                    </a>
-                  </li>
-                  <li class="py-2">
-                    <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                      <span class="font-semibold">Article Name</span>
-                      <p class="text-sm px-5">Jul, 2020</p>
-                      <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                    </a>
-                  </li>
+                  @foreach ($recentactivities as $recentactivity)
+                    <li class="py-2">
+                      <a href="{{route('recentactivitiesview',$recentactivity->id)}}" class="hover:text-blue-800 dark:hover:text-white">
+                        <span class="font-semibold">{{$recentactivity->title}}</span>
+                        <p class="text-sm px-5">{{\Carbon\Carbon::parse($recentactivity->created_at)->format('d F Y')}}</p>
+                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                      </a>
+                    </li>
+                  @endforeach
+                  
                 </ul>
                 <div class="flex justify-center my-5">
-                  <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                  <a href="{{route('recentactivities')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                     Read More
                   </a>
                 </div>
@@ -254,101 +204,29 @@
             <h1 class="text-xl md:text-3xl py-4 px-2 font-semibold text-white ">
               <span class="border-l-4 border-white px-2"></span> Events
             </h1>
-            <a href="#" class=" text-zinc-200  font-semibold hover:text-white">
+            <a href="{{route('events')}}" class=" text-zinc-200  font-semibold hover:text-white">
               More Events <span><i class="fa fa-angle-right pl-1"></i></span>
             </a>
           </div>
           <div class="swiper tSwiper">
             <div class="swiper-wrapper">
+              @foreach ($events as $event)
                 <div class="swiper-slide shadow-sm">
                   <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
+                    <img src="/storage/{{$event->photopath}}">
                     <p class="text-white px-5 font-semibold text-lg text-justify py-3">
-                      Here will be a title.
+                      {{$event->title}}
                     </p>
                     <div class="flex justify-center my-5">
-                      <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                      <a href="{{route('eventsview',$event->id)}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                         Read More
                       </a>
                     </div>
                     
                   </div>
                 </div>
+              @endforeach
 
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 font-semibold text-lg text-justify py-3">
-                      Here will be a title.
-                    </p>
-                    <div class="flex justify-center my-5">
-                      <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
-                        Read More
-                      </a>
-                    </div>
-                    
-                  </div>
-                </div>
-
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 font-semibold text-lg text-justify py-3">
-                      Here will be a title.
-                    </p>
-                    <div class="flex justify-center my-5">
-                      <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
-                        Read More
-                      </a>
-                    </div>
-                    
-                  </div>
-                </div>
-
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 font-semibold text-lg text-justify py-3">
-                      Here will be a title.
-                    </p>
-                    <div class="flex justify-center my-5">
-                      <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
-                        Read More
-                      </a>
-                    </div>
-                    
-                  </div>
-                </div>
-
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 font-semibold text-lg text-justify py-3">
-                      Here will be a title.
-                    </p>
-                    <div class="flex justify-center my-5">
-                      <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
-                        Read More
-                      </a>
-                    </div>
-                    
-                  </div>
-                </div>
-
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 font-semibold text-lg text-justify py-3">
-                      Here will be a title.
-                    </p>
-                    <div class="flex justify-center my-5">
-                      <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
-                        Read More
-                      </a>
-                    </div>
-                    
-                  </div>
-                </div>
             </div>
           </div>
           
@@ -357,7 +235,7 @@
     {{-- Events End --}}
 
     {{-- Program and major accomplishment Start --}}  
-      <div id="about-us" class="w-11/12 mx-auto">
+      <div id="programs" class="w-11/12 mx-auto">
         <div class="grid md:grid-cols-2">
             
             <div class="px-8 my-5">
@@ -366,23 +244,21 @@
                   Programs
                 </h1>
                 <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md md:text-lg list-disc list-inside">
-                  <li class="py-2">
-                    <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                      <span class="font-semibold">Article Name</span>
-                      <p class="text-sm px-5">Jul, 2020</p>
-                      <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                    </a>
-                  </li>
-                  <li class="py-2">
-                    <a href="#" class="hover:text-blue-800 dark:hover:text-white">
-                      <span class="font-semibold">Article Name</span>
-                      <p class="text-sm px-5">Jul, 2020</p>
-                      <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                    </a>
-                  </li>
+              
+                  @foreach ($programs as $program)
+                    <li class="py-2">
+                      <a href="{{route('programs.crp')}}" class="hover:text-blue-800 dark:hover:text-white">
+                        <span class="font-semibold">{{$program->title}}</span>
+                        <p class="text-sm px-5">{{\Carbon\Carbon::parse($program->created_at)->format('d F Y')}}</p>
+                        <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                      </a>
+                    </li>
+                  @endforeach
+                  
+                  
                 </ul>
                 <div class="flex justify-center my-5">
-                  <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                  <a href="{{route('programs.crp')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                     Read More
                   </a>
                 </div>
@@ -397,15 +273,18 @@
                 <p class="py-2 px-4 text-zinc-600 dark:text-zinc-400">
                   VDRC-Nepal in its almost four decade long history has accomplished several program and project activities, of which selected ones are outlined below.
                 </p>
-                <strong class="px-4 py-2">Literacy Program, Chitwan and Nawalparasi</strong>
-                <p class="px-4 ">
-                  Support: Room to Read
-                </p>
-                <p class="px-4 ">
-                  Objective: To improve reading habit
-                </p>
+                @foreach ($majoraccomplishments as $majoraccomplishment )
+                  <strong class="px-4 py-2">{{$majoraccomplishment->title}}</strong>
+                  <p class="px-4 ">
+                    Support: {{$majoraccomplishment->support}}
+                  </p>
+                  <p class="px-4 ">
+                    Objective: {{$majoraccomplishment->objective}}
+                  </p>
+                @endforeach
+                
                 <div class="flex justify-center my-5">
-                  <a href="#" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
+                  <a href="{{route('major')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
                     View More
                   </a>
                 </div>

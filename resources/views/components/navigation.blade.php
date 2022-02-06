@@ -49,10 +49,10 @@
 
                     <div class="dropdown inline-block relative" >
 
-                        <button class="flex items-center" @mouseover="isDrop=true">
+                        <a href="#programs" class="flex items-center" @mouseover="isDrop=true">
                             <span class="mr-1 ">Programs</span>
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                        </button>
+                        </a>
 
                         <ul class=" absolute  text-[#5977E9] dark:text-zinc-200 font-normal text-sm pt-1 w-52 z-10 bg-slate-50 dark:bg-slate-700 shadow-lg"  x-show="isDrop"  @mouseover.outside="isDrop = false" x-cloak>
 
@@ -246,10 +246,10 @@
 
                 <div class="dropdown inline-block relative" >
 
-                    <button class="flex items-center" @mouseover="isDrop=true">
+                    <a href="#programs" class="flex items-center" @mouseover="isDrop=true">
                         <span class="mr-1 ">Programs</span>
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                    </button>
+                    </a>
 
                     <ul class=" absolute  text-[#5977E9] dark:text-zinc-200 font-normal text-sm pt-1 w-52 z-10 bg-slate-50 dark:bg-slate-700 shadow-lg"  x-show="isDrop"  @mouseover.outside="isDrop = false" x-cloak>
 

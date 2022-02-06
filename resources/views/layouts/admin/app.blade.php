@@ -133,6 +133,22 @@
                                     <i class="fas fa-video"></i> &nbsp;  Videos
                                 </li>
                              </a>
+
+                             <a href="{{route('admin.galleries.index')}}" class="block mt-1 ">
+                                <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                                {{(request()->routeIs('admin.galleries.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                                transition-colors ease-in-out delay-100">
+                                    <i class="fas fa-image"></i> &nbsp;  Gallery
+                                </li>
+                             </a>
+
+                             <a href="{{route('admin.slideshows.index')}}" class="block mt-1 ">
+                                <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                                {{(request()->routeIs('admin.slideshows.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                                transition-colors ease-in-out delay-100">
+                                    <i class="fas fa-images"></i> &nbsp;  Slideshows
+                                </li>
+                             </a>
              
                              
                               <form method="POST" action="{{ route('logout')}}">
@@ -151,13 +167,13 @@
                 </div>
 
 
-       <div class="w-full h-full flex">
-            <div class="w-64 hidden md:flex">
-                <div class="w-64 max-h-100 h-full bg-[#5977E9] dark:bg-gray-800 dark:shadow-gray-700 shadow-lg shadow-sky-300 fixed">
+       <div class="w-full flex">
+            <div class="w-64  hidden md:flex ">
+                <div class="w-64 h-full  bg-[#5977E9] dark:bg-gray-800 dark:shadow-gray-700 shadow-lg shadow-sky-300 ">
                 <a href="/dashboard" >
                     <img src="{{ asset('images/logo.png') }}" alt="" class="py-5 px-5">
                 </a>
-               <ul class="my-8">
+               <ul class="my-2">
 
                 <a href="{{ route('dashboard') }}" class="block mt-1">
                    <li class="pl-4 text-lg py-2 font-semibold hover:bg-blue-300 hover:text-gray-700
@@ -235,6 +251,30 @@
                     {{(request()->routeIs('admin.videos.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
                     transition-colors ease-in-out delay-100">
                         <i class="fas fa-video"></i> &nbsp;  Videos
+                    </li>
+                 </a>
+
+                 <a href="{{route('admin.galleries.index')}}" class="block mt-1 ">
+                    <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                    {{(request()->routeIs('admin.galleries.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                    transition-colors ease-in-out delay-100">
+                        <i class="fas fa-image"></i> &nbsp;  Gallery
+                    </li>
+                 </a>
+
+                 <a href="{{route('admin.slideshows.index')}}" class="block mt-1 ">
+                    <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                    {{(request()->routeIs('admin.slideshows.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                    transition-colors ease-in-out delay-100">
+                        <i class="fas fa-images"></i> &nbsp;  Slideshows
+                    </li>
+                 </a>
+
+                 <a href="{{route('admin.users.edit',Auth::id())}}" class="block mt-1 ">
+                    <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                    {{(request()->routeIs('admin.users.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                    transition-colors ease-in-out delay-100">
+                        <i class="fas fa-user"></i> &nbsp;  Change Password
                     </li>
                  </a>
 
