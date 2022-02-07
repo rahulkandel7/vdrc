@@ -28,40 +28,20 @@
                 </h1>
                 <hr class="line dark:border-zinc-500 border-[#5977E9]">
                 <div class="flex flex-wrap justify-start">
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
-                        <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
-                            Photo Name
-                        </p>
-                        
-                    </div>
-
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
-                        <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
-                            Photo Name
-                        </p>
-                        
-                    </div>
-
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
-                        <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
-                            Photo Name
-                        </p>
-                        
-                    </div>
-
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
-                        <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
-                            Photo Name
-                        </p>
-                        
-                    </div>
-
+                  @foreach ($photos as $photo)
+                      <a href="{{route('gallery.pv',$photo->id)}}">
+                        <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
+                          <img src="/storage/{{$photo->photopath}}" class=" w-full h-52 rounded overflow-hidden">
+                          <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
+                              {{$photo->title}}
+                          </p>
+                          
+                        </div>
+                      </a>
+                  @endforeach
                     
 
+                    
                 </div>
         
                 

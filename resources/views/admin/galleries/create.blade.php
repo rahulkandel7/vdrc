@@ -22,6 +22,11 @@
                     <label for="title" class="block font-bold text-gray-600 dark:text-gray-200">Title</label>
                     <input type="text" name="title" id="title" class="border-[#5976e970] border-2 rounded-md w-full focus:ring-transparent focus:border-[#5977E9] bg-transparent mt-2" required value="{{old('title')}}">
                 </div>
+
+                <div class="mt-5">
+                    <label for="photopath" class="block font-bold text-gray-600 dark:text-gray-200">Select Image</label>
+                    <input type="file" name="photopath" id="photopath" class="border-0 w-full focus:ring-transparent focus:border-primary bg-transparent mt-2 file:border-none file:text-white file:bg-[#5977E9] file:rounded-md file:hover:bg-[#415dce] file:cursor-pointer">
+                </div>
     
                 
                 {{--  Add and Discard Button --}}

@@ -66,7 +66,7 @@ Route::name('membership.')->group(function() {
 Route::name('gallery.')->group(function() {
     Route::get('/photo-gallery', [FrontendController::class, 'photoGallery'])->name('pg');
     Route::get('/video-gallery', [FrontendController::class, 'videoGallery'])->name('vg');
-    Route::get('/photo-gallery/id', [FrontendController::class, 'photoView'])->name('pv');
+    Route::get('/photo-gallery/{id}', [FrontendController::class, 'photoView'])->name('pv');
 });
 
 Route::get('/training-reservation', [FrontendController::class, 'reservation'])->name('reservation');

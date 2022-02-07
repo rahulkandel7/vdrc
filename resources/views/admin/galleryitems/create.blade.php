@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+{{-- @extends('layouts.admin.app')
 
 @section('main')
 @include('layouts.message')
@@ -19,7 +19,6 @@
                 @csrf
                 
     
-                {{-- For selecting Image --}}
                 <div class="mt-5">
                     <label for="photopath" class="block font-bold text-gray-600 dark:text-gray-200">Select Image</label>
                     <input type="file" name="photopath" id="photopath" class="border-0 w-full focus:ring-transparent focus:border-primary bg-transparent mt-2 file:border-none file:text-white file:bg-[#5977E9] file:rounded-md file:hover:bg-[#415dce] file:cursor-pointer">
@@ -27,7 +26,7 @@
     
 
                 
-                {{--  Add and Discard Button --}}
+
                 
                 <div class="mt-4">
                     <button type="submit" class="px-6 py-1 border-0 shadow-sm hover:shadow-md bg-[#5977E9] hover:bg-[#3c56c0] rounded-md text-white">
@@ -43,4 +42,4 @@
             
         </div>
     </div>
-@endsection
+@endsection --}}

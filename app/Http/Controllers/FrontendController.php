@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Currentlyrunning;
 use App\Models\Event;
+use App\Models\Gallery;
+use App\Models\Galleryitem;
 use App\Models\Majoraccomplishment;
 use App\Models\Membership;
 use App\Models\Notice;
@@ -22,10 +24,11 @@ class FrontendController extends Controller
         $notices = Notice::take(3)->latest()->get();
         $recentactivities = RecentActivity::take(3)->latest()->get();
         $events = Event::take(10)->latest()->get();
+        $photos = Gallery::take(10)->latest()->get();
         $programs = Currentlyrunning::take(3)->latest()->get();
         $slideshows = Slideshow::all();
         $majoraccomplishments = Majoraccomplishment::take(2)->latest()->get();
-        return view('welcome',compact('slideshows','articles','notices','recentactivities','events','programs','majoraccomplishments'));
+        return view('welcome',compact('slideshows','articles','notices','recentactivities','events','programs','majoraccomplishments','photos'));
     }
     public function introduction()
     {
@@ -150,10 +153,11 @@ class FrontendController extends Controller
 
     public function photoGallery()
     {
+        $photos = Gallery::all();
         $articles = Article::take(3)->latest()->get();
         $notices = Notice::take(3)->latest()->get();
         $recentactivities = RecentActivity::take(3)->latest()->get();
-        return view('gallery.photogallery',compact('articles','notices','recentactivities'));
+        return view('gallery.photogallery',compact('articles','notices','recentactivities','photos'));
     }
 
     public function videoGallery()
@@ -165,12 +169,13 @@ class FrontendController extends Controller
         return view('gallery.videogallery',compact('articles','notices','recentactivities','videos'));
     }
 
-    public function photoView()
+    public function photoView($id)
     {
+        $photos = Galleryitem::where('gallery_id',$id)->get();
         $articles = Article::take(3)->latest()->get();
         $notices = Notice::take(3)->latest()->get();
         $recentactivities = RecentActivity::take(3)->latest()->get();
-        return view('gallery.photoview',compact('articles','notices','recentactivities'));
+        return view('gallery.photoview',compact('articles','notices','recentactivities','photos'));
     }
 
     public function reservation()

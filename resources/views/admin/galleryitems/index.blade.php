@@ -63,10 +63,6 @@
                        
                         </td>
                     </tr>
-
-                    <p>
-                        {{$galleryitem->gallery_id}}
-                    </p>
             
                 @endforeach
                 
@@ -105,10 +101,43 @@
             
             {{-- End Modal For Delete --}}
 
+
+            {{-- Modal For add --}}
+    
+                        <!-- Main modal -->
+                        <div id="addImage"  class="white-card hidden dark:bg-white dark:bg-opacity-10 overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-20 z-50 justify-center items-center md:h-full md:inset-0  align-middle"  >
+                            <div class="relative px-4 w-full max-w-md h-full md:h-auto mx-auto ">
+                                <!-- Modal content -->
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                
+                                    <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" method="POST" action="{{route('admin.galleryitems.store')}}"  enctype="multipart/form-data">
+                                    @csrf
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white pt-6 mb-0 text-center">Add Image</h3>
+                                          {{-- For selecting Image --}}
+                                            <div class="mt-5">
+                                                <label for="photopath" class="block font-bold text-gray-600 dark:text-gray-200">Select Image</label>
+                                                <input type="file" name="photopath" id="photopath" class="border-0 w-full focus:ring-transparent focus:border-primary bg-transparent mt-2 file:border-none file:text-white file:bg-[#5977E9] file:rounded-md file:hover:bg-[#415dce] file:cursor-pointer">
+                                            </div>
+
+                                        <input type="hidden" name="gallery_id" value="{{$id}}">
+                                        
+                                        
+                                        <div class="flex justify-center">
+                                        <button type="submit" class="py-2 px-4 mx-2 rounded-md text-white bg-indigo-600 shadow-md shadow-indigo-200 hover:bg-indigo-800 hover:shadow-sm dark:shadow-gray-600">Add</button>
+                                        <a class="py-2 px-4 mx-2 rounded-md cursor-pointer text-white bg-red-500 shadow-md shadow-red-200 hover:bg-red-600 hover:shadow-sm dark:shadow-gray-600" onclick="hideimage()">Cancel</a>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </div> 
+            
+            {{-- End Modal For add --}}
+
            
             <div class="fixed bottom-3 right-7">
 
-                <a href="{{ route('admin.galleryitems.create') }}">
+                <a onclick="addimage()">
                     <div class="bg-[#5977E9] w-14 h-14 rounded-full bg-primary text-white text-lg cursor-pointer">
                         <div class="flex justify-center pt-5">
                                 <i class="fas fa-plus"></i>
@@ -131,6 +160,16 @@
     function hidedelete(){
         $('#deletemodal').removeClass('flex');
         $('#deletemodal').addClass('hidden');
+    }
+
+    function addimage(){
+        $('#addImage').removeClass('hidden');
+        $('#addImage').addClass('flex');
+    }
+
+    function hideimage(){
+        $('#addImage').removeClass('flex');
+        $('#addImage').addClass('hidden');
     }
 </script>
 @endsection

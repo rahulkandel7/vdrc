@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class GalleryController extends Controller
 {
@@ -39,7 +41,19 @@ class GalleryController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string',
+            'photopath' => 'required|image|mimes:png,jpg'
         ]);
+
+        if($request->has('photopath')){
+            $fname = Str::random(20);
+            $fexe = $request->file('photopath')->extension();
+            $fpath = "$fname.$fexe";
+
+            $request->file('photopath')->storeAs('public/gallery', $fpath);
+
+            $data['photopath'] = 'gallery/'.$fpath;
+            
+        }
 
         Gallery::create($data);
 
@@ -79,7 +93,23 @@ class GalleryController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string',
+            'photopath' => 'nullable|image|mimes:png,jpg'
         ]);
+
+        if($request->has('photopath')){
+            $fname = Str::random(20);
+            $fexe = $request->file('photopath')->extension();
+            $fpath = "$fname.$fexe";
+
+            $request->file('photopath')->storeAs('public/galleryitems', $fpath);
+
+            $data['photopath'] = 'galleryitems/'.$fpath;
+
+            if($gallery->photopath){
+                Storage::delete('public/'. $gallery->photopath);
+            }
+            
+        }
 
         $gallery->update($data);
 
@@ -100,6 +130,7 @@ class GalleryController extends Controller
     public function delete(Request $request)
     {
         $s = Gallery::find($request->dataid);
+        Storage::delete('public/'. $s->photopath);
         $s->delete();
         return redirect(route('admin.galleries.index'))->with('success', 'Gallery Deleted Sucessfully');
 

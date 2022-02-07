@@ -67,10 +67,10 @@ class RecentActivityController extends Controller
      * @param  \App\Models\RecentActivity  $recentActivity
      * @return \Illuminate\Http\Response
      */
-    public function show(RecentActivity $recentactivities)
+    public function show($id)
     {
-        dd($recentactivities);
-        return view('admin.recentactivities.show',compact('recentactivities'));
+        $recentActivity = RecentActivity::findOrFail($id);
+        return view('admin.recentactivities.show',compact('recentActivity'));
     }
 
     /**

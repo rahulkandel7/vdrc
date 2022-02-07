@@ -30,41 +30,16 @@
                 </h1>
                 <hr class="line dark:border-zinc-500 border-[#5977E9]">
                 <div class="flex flex-wrap justify-start">
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <a href="{{asset('images/executive/1.jpeg')}}" data-lightbox="Title" data-title="My caption">
-                            <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
+                  @foreach ($photos as $photo)
+                      <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
+                        <a href="/storage/{{$photo->photopath}}" data-lightbox="Title" data-title="VDRC Images">
+                            <img src="/storage/{{$photo->photopath}}" class=" w-full h-52 rounded overflow-hidden">
                         </a>
                     </div>
+                  @endforeach
+                   
 
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <a href="{{asset('images/executive/1.jpeg')}}" data-lightbox="Title" data-title="My caption">
-                            <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
-                        </a>
-                    </div>
-
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <a href="{{asset('images/executive/1.jpeg')}}" data-lightbox="Title" data-title="My caption">
-                            <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
-                        </a>
-                    </div>
-
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <a href="{{asset('images/executive/1.jpeg')}}" data-lightbox="Title" data-title="My caption">
-                            <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
-                        </a>
-                    </div>
-
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <a href="{{asset('images/executive/1.jpeg')}}" data-lightbox="Title" data-title="My caption">
-                            <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
-                        </a>
-                    </div>
-
-                    <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <a href="{{asset('images/executive/1.jpeg')}}" data-lightbox="Title" data-title="My caption">
-                            <img src="{{asset('images/staff/12.jpeg')}}" class=" w-full h-52 rounded overflow-hidden">
-                        </a>
-                    </div>
+                    
 
                 </div>
         

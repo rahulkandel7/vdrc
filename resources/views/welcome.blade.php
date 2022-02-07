@@ -301,108 +301,29 @@
             <h1 class="text-xl md:text-3xl py-4 px-2 font-semibold text-white ">
               <span class="border-l-4 border-white px-2"></span> Photo Gallery
             </h1>
-            <a href="#" class=" text-zinc-200  font-semibold hover:text-white">
+            <a href="{{route('gallery.pg')}}" class=" text-zinc-200  font-semibold hover:text-white">
               More Photos <span><i class="fa fa-angle-right pl-1"></i></span>
             </a>
           </div>
 
           <div class="swiper tSwiper">
             <div class="swiper-wrapper">
+              @foreach ($photos as $photo)
                 <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 text-justify py-3">
-                      Third Gallery
-                    </p>
-                    
-                  </div>
+                  <a href="{{route('gallery.pv',$photo->id)}}">
+                    <div class="w-full  shadow-lg rounded glass image overflow-hidden">
+                      <img src="/storage/{{$photo->photopath}}" class="w-full object-cover">
+                      <p class="text-white px-5 text-justify py-3">
+                        {{$photo->title}}
+                      </p>
+                      
+                    </div>
+                  </a>
                 </div>
-
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 text-justify py-3">
-                      Third Gallery
-                    </p>
-                    
-                  </div>
-                </div>
-
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 text-justify py-3">
-                      Third Gallery
-                    </p>
-                    
-                  </div>
-                </div>
-
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 text-justify py-3">
-                      Third Gallery
-                    </p>
-                    
-                  </div>
-                </div>
-
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 text-justify py-3">
-                      Third Gallery
-                    </p>
-                    
-                  </div>
-                </div>
-
-                <div class="swiper-slide shadow-sm">
-                  <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-                    <img src="{{asset('images/i.jpeg')}}">
-                    <p class="text-white px-5 text-justify py-3">
-                      Third Gallery
-                    </p>
-                    
-                  </div>
-                </div>
+              @endforeach
+                
             </div>
           </div>
-
-          {{-- <div class="grid grid-cols-4 gap-x-11">
-            <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-              <img src="{{asset('images/i.jpeg')}}">
-              <p class="text-white px-5 text-justify py-3">
-                Third Gallery
-              </p>
-              
-            </div>
-            
-            <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-              <img src="{{asset('images/i.jpeg')}}">
-              <p class="text-white px-5 text-justify py-3">
-                Third Gallery
-              </p>
-              
-            </div>
-
-            <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-              <img src="{{asset('images/i.jpeg')}}">
-              <p class="text-white px-5 text-justify py-3">
-                Third Gallery
-              </p>
-              
-            </div>
-
-            <div class="w-full  shadow-lg rounded glass image overflow-hidden">
-              <img src="{{asset('images/i.jpeg')}}">
-              <p class="text-white px-5 text-justify py-3">
-                Third Gallery
-              </p>
-              
-            </div>
-          </div> --}}
           
         </div>
       </div>

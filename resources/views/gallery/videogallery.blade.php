@@ -16,6 +16,7 @@
             transition: all .2s ease-in-out;
         }
     </style>
+    <x-embed-styles />
 @endsection
 
 @section('content')
@@ -31,7 +32,7 @@
                   @foreach ($videos as $video)
                     <a href="{{$video->link}}">
                       <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
-                        <iframe src="{{$video->link}}"  class=" w-full h-56 rounded" x></iframe>
+                        <x-embed url="{{$video->link}}"  class=" w-full h-56 rounded" x></x-embed>
                         <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
                             {{$video->title}}
                         </p>

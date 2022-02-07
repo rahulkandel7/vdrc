@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Galleryitem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -57,7 +58,7 @@ class GalleryitemController extends Controller
 
         Galleryitem::create($data);
 
-        return redirect(route('admin.galleries.index'))->with('success', 'Image added sucessfully');
+        return Redirect::back()->with('success', 'Image added sucessfully');
     }
 
     /**
@@ -110,13 +111,13 @@ class GalleryitemController extends Controller
         $s = Galleryitem::find($request->dataid);
         Storage::delete('public/'.$s->photopath);
         $s->delete();
-        return redirect(route('admin.galleryitems.index'))->with('success', 'Image Deleted Sucessfully');
+        return Redirect::back()->with('success', 'Image Deleted Sucessfully');
 
     }
 
     public function showImage($id)
     {
         $galleryitems = Galleryitem::where('gallery_id',$id)->get();
-        return view('admin.galleryitems.index', compact('galleryitems'));
+        return view('admin.galleryitems.index', compact('galleryitems','id'));
     }
 }
