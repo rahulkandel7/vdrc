@@ -27,7 +27,7 @@
             Training Reservation
         </h1>
         <hr class="line dark:border-zinc-500 border-[#5977E9]">
-        <form class="px-5">
+        <form class="px-5" onchange="run()">
             <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="name" class="w-full text-zinc-700 dark:text-zinc-300">Full Name</label>
@@ -68,13 +68,12 @@
                 </div>
                 <div class="px-5">
                     <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Select Hall</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
-                        <option>
-                            Hall A
+                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 hallv" >
+                        <option selected disabled>
+                           -- Select Hall --
                         </option>
-                        <option>
-                            Hall B
-                        </option>
+                        <option>Hall A</option>
+                        <option>Hall B</option>
                     </select>
                 </div>
             </div>
@@ -83,7 +82,7 @@
             <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Select Trainee</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
+                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 trainee">
                         <option>
                             Select Trainee
                         </option>
@@ -92,7 +91,7 @@
 
                 <div class="px-5">
                     <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Male Participant</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
+                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 male">
                         <option>
                             Male Participant
                         </option>
@@ -104,7 +103,7 @@
 
                 <div class="px-5">
                     <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Female Participant</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
+                    <select  class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 female">
                         <option>
                             Female Participant
                         </option>
@@ -166,5 +165,58 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/lightbox/lightbox.min.js')}}"></script>
+    <script>
+        function run() {
+            let h = $(".hallv option:selected").text();
+            if(h === "Hall A") {
+                console.log('hello a');
+
+                for (let i = 1; i <=60; i++) {
+                    $('.trainee').append($('<option>', { 
+                        value: i,
+                        text : i
+                    }));
+                    
+                }
+
+            }
+
+            if(h === "Hall B") {
+                console.log('hello b');
+
+                for (let i = 1; i <=40; i++) {
+                    $('.trainee').append($('<option>', { 
+                        value: i,
+                        text : i
+                    }));
+                    
+                }
+
+            }
+            let t = $(".trainee option:selected").text();
+
+            for (let i = 1; i <=t; i++) {
+                $('.male').append($('<option>', { 
+                    value: i,
+                    text : i
+                }));
+                    
+            }
+
+            let m = $(".male option:selected").text();
+            
+            let f = t-m;
+
+
+            if(!f.value.isNan){
+            alert(f.value);
+
+                $('.female').append($('<option selected >', { 
+                    value: f,
+                    text : f
+                }));
+            }
+
+        }
+    </script>
 @endsection

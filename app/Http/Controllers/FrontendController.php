@@ -260,7 +260,17 @@ class FrontendController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $articles = Article::all()->count();
+        $notices = Notice::all()->count();
+        $slideshows = Slideshow::all()->count();
+        $activities = RecentActivity::all()->count();
+        $members = Membership::all()->count();
+        $events = Event::all()->count();
+        $publications = Publication::all()->count();
+        $currently = Currentlyrunning::all()->count();
+        $videos = Video::all()->count();
+        $gallery = Gallery::all()->count();
+        return view('dashboard',compact('articles','notices','slideshows','activities','members','events','publications','currently','videos','gallery'));
     }
 
     public function notices()
