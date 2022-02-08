@@ -14,7 +14,7 @@ use App\Http\Controllers\Admin\SlideshowController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\FrontendController;
-
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -93,6 +93,9 @@ Route::get('/majoraccomplishment', [FrontendController::class, 'major'])->name('
 Route::get('/strategic-partnership', [FrontendController::class, 'strategic'])->name('strategic');
 Route::get('/csos-role-instrumental-during-pandemic', [FrontendController::class, 'cso'])->name('cso');
 
+//reservation
+Route::resource('reservations', ReservationController::class);
+
 //Admin Routing 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     Route::resource('articles', ArticleController::class);
@@ -133,6 +136,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     Route::post('/slideshows/delete',[\App\Http\Controllers\Admin\SlideshowController::class,'delete'])->name('slideshows.delete');
 
     Route::resource('users',UserController::class);
+
+    Route::get('/reservations',[FrontendController::class,'reservationa'])->name('reservations.index');
 });
 
 require __DIR__.'/auth.php';

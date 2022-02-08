@@ -21,59 +21,61 @@
 @endsection
 
 @section('content')
+@include('layouts.message')
     <div class="w-11/12 mx-auto shadow-sm py-5 shadow-gray-300 dark:shadow-gray-900 rounded my-4 ">
         <h1 class="text-3xl py-4 px-2 font-semibold text-[#5977E9]">
             <span class="border-l-4 border-[#5977E9] px-2"></span> 
             Training Reservation
         </h1>
         <hr class="line dark:border-zinc-500 border-[#5977E9]">
-        <form class="px-5" onchange="run()">
+        <form class="px-5" action="{{route('reservations.store')}}" method="post">
+            @csrf
             <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="name" class="w-full text-zinc-700 dark:text-zinc-300">Full Name</label>
-                    <input type="text" name="name" id="name" class="w-full rounded-md dark:text-black  border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
+                    <input type="text" name="name" id="name" class="w-full rounded-md dark:text-black  border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1" required value="{{old('name')}}">
                 </div>
                 <div class="px-5">
                     <label for="organization" class="w-full text-zinc-700 dark:text-zinc-300">Organization / Institue</label>
-                    <input type="text" name="organization" id="organization" class="w-full dark:text-black  rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
+                    <input type="text" name="organization_name" id="organization" class="w-full dark:text-black  rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1" required value="{{old('organization_name')}}">
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="address" class="w-full text-zinc-700 dark:text-zinc-300">Address</label>
-                    <input type="text" name="address" id="address" class="w-full rounded-md border-zinc-600 dark:text-black dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
+                    <input type="text" name="address" id="address" class="w-full rounded-md border-zinc-600 dark:text-black dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1" required value="{{old('address')}}">
                 </div>
                 <div class="px-5">
                     <label for="email" class="w-full text-zinc-700 dark:text-zinc-300">Email</label>
-                    <input type="text" name="email" id="email" class="w-full rounded-md dark:text-black  border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
+                    <input type="email" name="email" id="email" class="w-full rounded-md dark:text-black  border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1" required value="{{old('email')}}">
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
                     <label for="phone" class="w-full text-zinc-700 dark:text-zinc-300">Phone number</label>
-                    <input type="text" name="phone" id="phone" class="w-full rounded-md dark:text-black  border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
+                    <input type="text" name="phone" id="phone" class="w-full rounded-md dark:text-black  border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1" required value="{{old('phone')}}">
                 </div>
                 <div class="px-5">
-                    <label for="reserveFrom" class="w-full text-zinc-700  dark:text-zinc-300">Reserve From</label>
-                    <input type="date" name="reserveFrom" id="reserveFrom" class="w-full dark:text-black  rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
+                    <label for="reservefrom" class="w-full text-zinc-700  dark:text-zinc-300">Reserve From</label>
+                    <input type="date" name="reservefrom" id="reservefrom" class="w-full dark:text-black  rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1" required value="{{old('reservefrom')}}">
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
-                    <label for="reserveTo" class="w-full text-zinc-700 dark:text-zinc-300">Reserve To</label>
-                    <input type="date" name="reserveTo" id="reserveTo" class="w-full dark:text-black  rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1">
+                    <label for="reserveto" class="w-full text-zinc-700 dark:text-zinc-300">Reserve To</label>
+                    <input type="date" name="reserveto" id="reserveto" class="w-full dark:text-black  rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] mt-1" required value="{{old('reserveto')}}">
                 </div>
                 <div class="px-5">
                     <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Select Hall</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 hallv" >
+                    <select id="hall" name="hall" class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 hallv" onchange="hallselect()">
                         <option selected disabled>
                            -- Select Hall --
                         </option>
-                        <option>Hall A</option>
-                        <option>Hall B</option>
+                        <option value="Hall A">Hall A</option>
+                        <option value="Hall B">Hall B</option>
                     </select>
                 </div>
             </div>
@@ -81,17 +83,17 @@
 
             <div class="grid md:grid-cols-2 my-2">
                 <div class="px-5">
-                    <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Select Trainee</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 trainee">
-                        <option>
+                    <label for="trainee" class="w-full text-zinc-700 dark:text-zinc-300">Select Trainee</label>
+                    <select id="trainee" name="trainee" class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 trainee" onfocus="traineeselect()">
+                        <option >
                             Select Trainee
                         </option>
                     </select>
                 </div>
 
                 <div class="px-5">
-                    <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Male Participant</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 male">
+                    <label for="male" class="w-full text-zinc-700 dark:text-zinc-300">Male Participant</label>
+                    <select id="male" name="male" class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 male" onfocus="maleselect()">
                         <option>
                             Male Participant
                         </option>
@@ -102,8 +104,8 @@
             <div class="grid md:grid-cols-2 my-2">
 
                 <div class="px-5">
-                    <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Female Participant</label>
-                    <select  class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 female">
+                    <label for="female" class="w-full text-zinc-700 dark:text-zinc-300">Female Participant</label>
+                    <select name="female" id="female" class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 female" onfocus="femaleselect()">
                         <option>
                             Female Participant
                         </option>
@@ -111,10 +113,10 @@
                 </div>
 
                 <div class="px-5">
-                    <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Loding</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
+                    <label for="loding" class="w-full text-zinc-700 dark:text-zinc-300">Loding</label>
+                    <select name="loding" id="loding" class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
                         @for ($i=1; $i<=60; $i++)
-                        <option>
+                        <option value="{{$i}}">
                             {{$i}}
                         </option>
                         @endfor
@@ -126,10 +128,10 @@
             <div class="grid md:grid-cols-2 my-2">
 
                 <div class="px-5">
-                    <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Fooding</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
+                    <label for="fooding"  class="w-full text-zinc-700 dark:text-zinc-300">Fooding</label>
+                    <select name="fooding" id="fooding" class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
                         @for ($i=1; $i<=120; $i++)
-                        <option>
+                        <option value="{{$i}}">
                             {{$i}}
                         </option>
                         @endfor
@@ -138,19 +140,17 @@
                 </div>
 
                 <div class="px-5">
-                    <label for="hall" class="w-full text-zinc-700 dark:text-zinc-300">Select Price</label>
-                    <select class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1">
+                    <label for="type" class="w-full text-zinc-700 dark:text-zinc-300">Select Price</label>
+                    <select name="type" id="type" class="w-full rounded-md border-zinc-600 dark:border-zinc-300 focus:ring-[#5977E9] active:ring-[#5977E9] focus:border-[#5977E9] active:border-[#5977E9] dark:text-black mt-1 price" onchange="price()">
+                        <option selected disabled>-- Select Package --</option>
 
-                        <option>
-                            With AC
-                        </option>
+                        <option value="With AC">With AC</option>
 
-                        <option>
-                            Without AC
-                        </option>
+                        <option value="Without AC">Without AC</option>
 
                         
                     </select>
+                    <p  id="price" class="w-full text-zinc-700 dark:text-zinc-300 my-2"></p>
                 </div>
             </div>
 
@@ -166,10 +166,15 @@
 
 @section('js')
     <script>
-        function run() {
-            let h = $(".hallv option:selected").text();
+        let h;
+        let t;
+        function hallselect() {
+             h = $(".hallv option:selected").text();
+        }
+        function traineeselect() {
+            // alert(h);
             if(h === "Hall A") {
-                console.log('hello a');
+                $('.trainee').empty();
 
                 for (let i = 1; i <=60; i++) {
                     $('.trainee').append($('<option>', { 
@@ -182,7 +187,8 @@
             }
 
             if(h === "Hall B") {
-                console.log('hello b');
+                $('.trainee').empty();
+
 
                 for (let i = 1; i <=40; i++) {
                     $('.trainee').append($('<option>', { 
@@ -193,8 +199,12 @@
                 }
 
             }
-            let t = $(".trainee option:selected").text();
-
+        }
+        function maleselect() {
+            
+            
+            t = $(".trainee option:selected").text();
+            $('.male').empty();
             for (let i = 1; i <=t; i++) {
                 $('.male').append($('<option>', { 
                     value: i,
@@ -203,18 +213,28 @@
                     
             }
 
+        }
+
+        function femaleselect() {
             let m = $(".male option:selected").text();
             
-            let f = t-m;
+            let f = parseInt(t)-parseInt(m);
 
-
-            if(!f.value.isNan){
-            alert(f.value);
-
-                $('.female').append($('<option selected >', { 
+                $('.female').empty();
+                $('.female').append($('<option >', { 
                     value: f,
                     text : f
                 }));
+        }
+
+        function price() {
+            let p = $(".price option:selected").text();
+            console.log(p);
+            if(p == "With AC") {
+                $('#price').text("NRS 2000/pax per day(With AC)");
+            }
+            if(p == "Without AC") {
+                $('#price').text("NRS 1600/pax per day(Without AC)");
             }
 
         }

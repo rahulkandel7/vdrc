@@ -17,15 +17,15 @@
     <div class="flex-1">
         <div class="px-5 py-5">
             <h3 class="text-[#5977E9] text-4xl font-bold">
-                Members
+                Reservations
             </h3>
             <hr>
     
-                <div class="w-44 h-32 mx-4 mt-4 p-2 shadow-md dark:shadow-indigo-800 rounded-md bg-indigo-500 shadow-indigo-200 hover:shadow-sm hover:cursor-pointer">
-                    <h2 class="text-xl font-bold text-white">No of Members</h2>
+                <div class="w-56 h-32 mx-4 mt-4 p-2 shadow-md dark:shadow-teal-800 rounded-md bg-teal-500 shadow-teal-200 hover:shadow-sm hover:cursor-pointer">
+                    <h2 class="text-xl font-bold text-white">No of Reservations</h2>
                     <div class="flex justify-between">
-                        <i class="fa fa-users fa-2x text-white opacity-70"></i>
-                    <h1 class="text-4xl font-bold text-right text-white mr-4">{{count($memberships)}}</h1>
+                        <i class="fas fa-bookmark fa-2x text-white opacity-70"></i>
+                    <h1 class="text-4xl font-bold text-right text-white mr-4">{{count($reservations)}}</h1>
                     </div>
                 </div>
 
@@ -40,49 +40,97 @@
                         Name
                     </td>
                     <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
-                        Image
+                        Organization Name
                     </td>
                     <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
-                        Type
+                        Address
                     </td>
                     <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
-                        Actions
+                        Email Address
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        Phone Number
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        Reservation From
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        Reservation To
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        Hall
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        No.of Trainee
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        Male Participant
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        Female Participant
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        Loding
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        Fooding
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
+                        Room type
                     </td>
                 </tr>
                 @php
                     $i = 0;
                 @endphp
     
-                @foreach ($memberships as $membership)
+                @foreach ($reservations as $reserve)
                     <tr>
                         <td class="text-gray-900 font-semibold px-5 border  dark:text-white">
                             {{++$i}} 
                         </td>
                         <td class="text-gray-900 font-bold px-5 border dark:text-white">
-                            <a href="{{route('admin.memberships.show',$membership->id)}}" class="cursor-pointer">
-                                {{$membership->name}} 
-                            </a>
-                        </td>
-                        <td class="text-gray-900 font-bold px-5 border w-52 dark:text-white">
-
-                            <img src="/storage/{{$membership->photopath}}">
-
+                            {{$reserve->name}}
                         </td>
                         <td class="text-gray-900 font-bold px-5 border dark:text-white">
-
-                                {{$membership->type}} 
-
+                            {{$reserve->organization_name}}
                         </td>
-                        <td class="text-gray-600 font-semibold px-5 border  py-2">
-                            <a href="{{ route('admin.memberships.edit', $membership->id) }}">
-                                <i class="far fa-edit hover:text-blue-900 font-bold cursor-pointer text-xl dark:text-blue-300 dark:hover:text-blue-500"></i>
-                            </a>
-                            
-                            <button onclick="showdelete({{$membership->id}})">
-                                <i class="fas fa-trash hover:text-red-500 font-bold cursor-pointer text-xl ml-3 dark:text-red-300 dark:hover:text-red-600"></i>
-                            </button>
-                       
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->address}}
                         </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->email}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->phone}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->reservefrom}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->reserveto}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->hall}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->trainee}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->male}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->female}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->loding}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->fooding}}
+                        </td>
+                        <td class="text-gray-900 font-bold px-5 border dark:text-white">
+                            {{$reserve->type}}
+                        </td>
+                        
                     </tr>
     
                 @endforeach
@@ -90,7 +138,7 @@
             </table>
     
             <div class="my-4">
-                
+                {{$reservations->links()}}
             </div>
     
              {{-- Modal For Delete --}}
@@ -101,7 +149,7 @@
                                 <!-- Modal content -->
                                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                                 
-                                    <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" method="POST" action="{{route('admin.memberships.delete')}}">
+                                    <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" method="POST" action="{{route('admin.videos.delete')}}">
                                     @csrf
                                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white pt-6 mb-0 text-center">Are You Sure to Delete ?</h3>
                                         <p class="text-center mt-0 text-red-500">The action is irreversible</p>
@@ -121,7 +169,7 @@
             {{-- End Modal For Delete --}}
     
             <div class="fixed bottom-3 right-7">
-                <a href="{{ route('admin.memberships.create') }}">
+                <a href="{{ route('admin.videos.create') }}">
                     <div class="bg-[#5977E9] w-14 h-14 rounded-full bg-primary text-white text-lg cursor-pointer">
                         <div class="flex justify-center pt-5">
                                 <i class="fas fa-plus"></i>

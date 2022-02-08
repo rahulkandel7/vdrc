@@ -28,10 +28,10 @@
                     Video Gallery
                 </h1>
                 <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                <div class="flex flex-wrap justify-start">
+                <div class="flex flex-wrap justify-center">
                   @foreach ($videos as $video)
                     <a href="{{$video->link}}">
-                      <div class="w-64 shadow-lg rounded-md mx-3 my-4 images">
+                      <div class="w-96 shadow-lg rounded-md mx-3 my-4 images">
                         <x-embed url="{{$video->link}}"  class=" w-full h-56 rounded" x></x-embed>
                         <p class="text-center mt-2 font-semibold text-zinc-700 dark:text-zinc-200">
                             {{$video->title}}

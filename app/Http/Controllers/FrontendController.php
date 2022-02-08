@@ -12,6 +12,7 @@ use App\Models\Membership;
 use App\Models\Notice;
 use App\Models\Publication;
 use App\Models\RecentActivity;
+use App\Models\Reservation;
 use App\Models\Slideshow;
 use App\Models\Video;
 use Illuminate\Http\Request;
@@ -181,6 +182,12 @@ class FrontendController extends Controller
     public function reservation()
     {
         return view('reservation');
+    }
+
+    public function reservationa()
+    {
+        $reservations = Reservation::paginate(10);
+        return view('admin.reservation',compact('reservations'));
     }
 
     public function contact()

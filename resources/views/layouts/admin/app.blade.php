@@ -270,6 +270,14 @@
                     </li>
                  </a>
 
+                 <a href="{{route('admin.reservations.index')}}" class="block mt-1 ">
+                    <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
+                    {{(request()->routeIs('admin.reservations.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 
+                    transition-colors ease-in-out delay-100">
+                        <i class="fas fa-bookmark"></i> &nbsp;  Resevations
+                    </li>
+                 </a>
+
                  <a href="{{route('admin.users.edit',Auth::id())}}" class="block mt-1 ">
                     <li class="pl-4 text-lg py-2   hover:bg-blue-300 hover:text-gray-700 
                     {{(request()->routeIs('admin.users.*'))? "bg-blue-600 text-white " : "text-slate-300"}} 

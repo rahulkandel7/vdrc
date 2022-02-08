@@ -33,16 +33,19 @@
     
             <table class="border border-gray-200 w-full mt-10 shadow-md rounded-md ">
                 <tr>
-                    <td class="text-gray-600 font-semibold px-5 border w-32 dark:text-white">
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
                         S.No
                     </td>
                     <td class="text-gray-600 font-semibold px-5 border dark:text-white">
                         Name
                     </td>
-                    <td class="text-gray-600 font-semibold px-5 border w-32 dark:text-white">
+                    <td class="text-gray-600 font-semibold px-5 border dark:text-white">
+                        Image
+                    </td>
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
                         Action
                     </td>
-                    <td class="text-gray-600 font-semibold px-5 border w-32 dark:text-white">
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
                         Actions
                     </td>
                 </tr>
@@ -52,7 +55,7 @@
     
                 @foreach ($galleries as $gallery)
                     <tr>
-                        <td class="text-gray-900 font-semibold px-5 border w-32 dark:text-white">
+                        <td class="text-gray-900 font-semibold px-5 border  dark:text-white">
                             {{++$i}} 
                         </td>
                         <td class="text-gray-900 font-bold px-5 border dark:text-white">
@@ -60,12 +63,17 @@
                                 {{$gallery->title}} 
 
                         </td>
+                        <td class="text-gray-900 font-bold px-5 border w-52 dark:text-white">
+
+                            <img src="/storage/{{$gallery->photopath}}">
+
+                        </td>
                         <td class="text-gray-900 font-bold px-5 border dark:text-white">
                             <a href="{{route('admin.galleryitems.showImage',$gallery->id)}}">
                                 Goto Folder
                             </a>
                         </td>
-                        <td class="text-gray-600 font-semibold px-5 border w-32 py-2">
+                        <td class="text-gray-600 font-semibold px-5 border  py-2">
                             <a href="{{ route('admin.galleries.edit', $gallery->id) }}">
                                 <i class="far fa-edit hover:text-blue-900 font-bold cursor-pointer text-xl dark:text-blue-300 dark:hover:text-blue-500"></i>
                             </a>

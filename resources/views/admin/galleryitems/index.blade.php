@@ -33,13 +33,13 @@
     
             <table class="border border-gray-200 w-full mt-10 shadow-md rounded-md ">
                 <tr>
-                    <td class="text-gray-600 font-semibold px-5 border w-32 dark:text-white">
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
                         S.No
                     </td>
                     <td class="text-gray-600 font-semibold px-5 border dark:text-white">
                         Image
                     </td>
-                    <td class="text-gray-600 font-semibold px-5 border w-32 dark:text-white">
+                    <td class="text-gray-600 font-semibold px-5 border  dark:text-white">
                         Actions
                     </td>
                 </tr>
@@ -49,13 +49,13 @@
     
                 @foreach ($galleryitems as $galleryitem)
                     <tr>
-                        <td class="text-gray-900 font-semibold px-5 border w-32 dark:text-white">
+                        <td class="text-gray-900 font-semibold px-5 border  dark:text-white">
                             {{++$i}} 
                         </td>
                         <td class="text-gray-900 font-bold px-5 border dark:text-white">
-                            <img src="/storage/{{$galleryitem->photopath}}" class="w-12">
+                            <img src="/storage/{{$galleryitem->photopath}}" class="w-52">
                         </td>
-                        <td class="text-gray-600 font-semibold px-5 border w-32 py-2">
+                        <td class="text-gray-600 font-semibold px-5 border  py-2">
                             
                             <button onclick="showdelete({{$galleryitem->id}})">
                                 <i class="fas fa-trash hover:text-red-500 font-bold cursor-pointer text-xl ml-3 dark:text-red-300 dark:hover:text-red-600"></i>
