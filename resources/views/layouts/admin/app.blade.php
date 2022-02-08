@@ -16,6 +16,8 @@
 
         {{-- Alpine --}}
         <script src="//unpkg.com/alpinejs" defer></script>
+
+        <link rel="shortcut icon" type="image/jpg" href="/favicon.jpg"/>
         
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>

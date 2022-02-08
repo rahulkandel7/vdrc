@@ -101,7 +101,7 @@
                 </a>
 
                 <a href="{{route('admin.currentlyrunnings.index')}}" class="w-64 my-4">
-                    <div class="  mx-4 mt-4 p-2 shadow-md shadow-fuchsia-300 dark:shadow-gray-600 rounded-md bg-fuchsia-500 hover:shadow-sm hover:cursor-pointer">
+                    <div class="  mx-4 mt-4 p-2 shadow-md shadow-teal-300 dark:shadow-gray-600 rounded-md bg-teal-500 hover:shadow-sm hover:cursor-pointer">
                         <h2 class="text-xl font-bold text-white">No of Major Accomplishments</h2>
                         <div class="flex justify-between">
                             <i class="fas fa-running fa-2x text-white opacity-70"></i>
