@@ -12,13 +12,13 @@
 
 @section('content')
     <div class="w-11/12 mx-auto shadow-sm py-5 shadow-gray-300 dark:shadow-gray-900 rounded my-4 ">
-        <div class="grid md:grid-cols-3">
+        <div class="grid">
             <div class="md:col-span-2">
-                <h1 class="text-3xl py-4 px-2 font-semibold text-[#5977E9]">
-                    <span class="border-l-4 border-[#5977E9] px-2"></span> 
+                <h1 class="text-3xl py-4 px-2 font-semibold text-[#000cf9]">
+                    <span class="border-l-4 border-[#000cf9] px-2"></span> 
                     CSOs' role instrumental during pandemic
                 </h1>
-                <hr class="line dark:border-zinc-500 border-[#5977E9]">
+                <hr class="line dark:border-zinc-500 border-[#000cf9]">
         
                 <p class="text-justify px-5 pt-2 text-zinc-600 dark:text-zinc-300">
                     Vijaya Development Resource Centre (VDRC-Nepal) – a civil society organization based in Gaindakot-8, Nawalpur – has marked its 42nd establishment day amidst a virtual programme on 11th July, 2020. At a zoom-enabled social dialogue 'Accountable response/recovery of COVID-19 crisis: Role of Civil Society Organizations' held on 11th July, 2020 on the occasion, key note speaker, Hari Sharma, a noted social-political analyst, said the CSO role of questioning was always instrumental in protecting democracy, citizen freedoms and people's lives in any crisis including pandemic. "Democratic institutions and freedoms are always under attack in the pretexts of crisis and emergency. Social dialogue and consultations are a must to counter such assaults which demands the civic groups and organizations' role in raising questions against authorities", he stressed. As an intermediary force, the community-rooted and trusted CSOs can bridge the citizens and democracy through dialogue and deliberations, Sharma said, noting that the democratically communicated and engaged communities can exercise self-discipline and decision to fight against any pandemic such as COVID-19. "Germany and South Korea, among others, democratically took the people into confidence to tackle the pandemic and successfully handled the situation. They dealt the situation by emphatically giving space to public aspirations manifested through dialogue and consultation in formulating public health policy", the political analyst added. He further spoke the need of a new social contract and unconventional way of social dialogue to approach people so as to protect society in the wake of the present crisis. "This is the time to have a new social contract between the home returnees and social-political structures such as local governments, trade unions and CSOs. New perspective is imperative to allocate resources to address the emergence of problems with changes in human institutions and structures in the current context". Sharma also highlighted the urgency of putting into consideration the principles of equality, freedom, representation and community fraternity in framing and implementing the public policies by placing the social dialogue in the centre. As bigger architecture of democracy has the root of family democracy and governance the public education – which is only possible in open society should be massively put in place, he further said. Also speaking on the occasion, former President of NGO Federation and CSO activist Basudev Neupane said the civic organizations like VDRC and its network should impart message to the entire country by converting the threats of COVID-19 into opportunity. "The migrant returnee workers could be an asset for the organization to design and deliver its initiatives in engaging then in productive sector". At the programme presided over by VDRC Chair Laxmi Gautam, its Executive Director Keshab Sapkota said the social dialogue was initiated to connect Nepali Diaspora with homeland and also to build on an idea of developing Gaindakot as a knowledge hub. Among other speakers were VDRC ex-presidents Basanta Raj Lamsal and Khem Raj Sapkota. As many as 95 members and well-wishers of VDRC had attended the programme from Nepal, Canada, Denmark, the United States, and the United Kingdom. To mark its anniversary, the organization had also planted as many as 250 saplings of various species in its greenery park on the bank of the Narayani River in Gaindakot on Friday, shared VDRC chair Gautam. <br>
@@ -108,83 +108,7 @@
                 </p>
 
             </div>
-            <div>
-              <div class="px-8 my-5 w-full">
-                  <div class="shadow-lg shadow-blue-100 dark:shadow-gray-900 dark:shadow-md w-full rounded pb-2">
-                    <h1 class="text-lg md:text-2xl py-2 border-l-8 border-[#d6da02] font-semibold bg-[#5977E9] text-left rounded-tr-full text-white  px-5">
-                      Notices / Vacancy
-                    </h1>
-                    <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md list-disc list-inside">
-                      @foreach ($notices as $notice)
-                        <li class="py-2">
-                            <a href="/storage/{{$notice->filepath}}" class="hover:text-blue-800 dark:hover:text-white">
-                              <span class="font-semibold">{{$notice->title}}</span>
-                              <p class="text-sm px-5">{{ \Carbon\Carbon::parse($notice->created_at)->format('d F Y')}}</p>
-                              <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                            </a>
-                        </li>
-                      @endforeach
-                      
-                    </ul>
-                    <div class="flex justify-center my-5">
-                      <a href="{{route('notice')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="px-8 my-5">
-                <div class="shadow-lg shadow-blue-100 dark:shadow-gray-900 dark:shadow-md w-full rounded pb-2">
-                  <h1 class="text-lg md:text-2xl py-2 border-l-8 border-[#d6da02] font-semibold bg-[#5977E9] text-left rounded-tr-full text-white  px-5">
-                    Articles
-                  </h1>
-                  <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md list-disc list-inside">
-                    @foreach ($articles as $article)
-                        <li class="py-2">
-                            <a href="{{route('articlesview',$article->id)}}" class="hover:text-blue-800 dark:hover:text-white">
-                              <span class="font-semibold">{{$article->title}}</span>
-                              <p class="text-sm px-5">{{ \Carbon\Carbon::parse($article->created_at)->format('d F Y')}}</p>
-                              <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                            </a>
-                        </li>
-                      @endforeach
-                    
-                  </ul>
-                  <div class="flex justify-center my-5">
-                    <a href="{{route('articles')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="px-8 my-5">
-                <div class="shadow-lg shadow-blue-100 dark:shadow-gray-900 dark:shadow-md w-full rounded pb-2">
-                  <h1 class="text-lg md:text-2xl py-2 border-l-8 border-[#d6da02] font-semibold bg-[#5977E9] text-left rounded-tr-full text-white  px-5">
-                    Recent Activities
-                  </h1>
-                  <ul class="px-5 text-[#5977E9] dark:text-zinc-400 text-md list-disc list-inside">
-                    @foreach ($recentactivities as $recentactivity)
-                        <li class="py-2">
-                            <a href="{{route('recentactivitiesview',$recentactivity->id)}}" class="hover:text-blue-800 dark:hover:text-white">
-                              <span class="font-semibold">{{$recentactivity->title}}</span>
-                              <p class="text-sm px-5">{{ \Carbon\Carbon::parse($recentactivity->created_at)->format('d F Y')}}</p>
-                              <hr class="line dark:border-zinc-500 border-[#5977E9]">
-                            </a>
-                        </li>
-                      @endforeach
-                    
-                  </ul>
-                  <div class="flex justify-center my-5">
-                    <a href="{{route('recentactivities')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-          </div>
+            
         </div>
 
     </div>

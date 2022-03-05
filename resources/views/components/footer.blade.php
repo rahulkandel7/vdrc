@@ -1,4 +1,4 @@
-<div class="w-full bg-zinc-100 dark:bg-gray-700">
+<div class="w-full bg-white dark:bg-gray-700">
     <div class="w-11/12 mx-auto">
         <div class="grid md:grid-cols-4 gap-x-10 py-10">
             <div class="dark:text-zinc-100">
@@ -18,46 +18,8 @@
                 <p>
                     Email: vdrc@vdrc.org.np
                 </p>
-            </div>
 
-            <div>
-                <h3 class="text-xl font-semibold py-4 dark:text-slate-300">
-                    Strategic Partnership
-                </h3>
-                <ul class="text-[#5977E9] dark:text-zinc-100  list-inside list-disc">
-                    <li class="hover:text-blue-800 dark:hover:text-[#5977E9]">
-                        <a href="#">
-                            Vijaya Samudayik Siksha Sadan
-                        </a>
-                    </li>
-                    <li class="hover:text-blue-800 dark:hover:text-[#5977E9]">
-                        <a href="#">
-                            Vijaya F.M
-                        </a>
-                    </li>
-                    <li class="hover:text-blue-800 dark:hover:text-[#5977E9]">
-                        <a href="#">
-                            Vijaya Laghubitta Bittiya Sanstha
-                        </a>
-                    </li>
-                    <li class="hover:text-blue-800 dark:hover:text-[#5977E9]">
-                        <a href="#">
-                            VYCCU Savings and Credit Cooperative Limited
-                        </a>
-                    </li>
-                </ul>
-                <div class="flex  my-5 text-md">
-                    <a href="{{route('strategic')}}" class="px-4 py-1 bg-blue-800 text-white rounded-md shadow-lg hover:bg-blue-900">
-                      Show More
-                    </a>
-                  </div>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold py-4 text-center dark:text-slate-300">
-                    Social Links
-                </h3>
-                <div class="flex flex-wrap justify-center">
+                <div class="flex flex-wrap  mt-5">
                     <p class="px-1">
                         <a href="" class="text-[#4267B2] hover:text-[#355596]">
                             <i class="fab fa-facebook fa-2x"></i>
@@ -74,7 +36,64 @@
                         </a>
                     </p>
                 </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold py-4 dark:text-slate-300">
+                    Strategic Partnership
+                </h3>
+                <ul class="text-[#000cf9] dark:text-zinc-100  list-inside list-disc">
+                    <li class="hover:text-[#4a50c9] dark:hover:text-[#000cf9]">
+                        <a href="#">
+                            Vijaya Samudayik Siksha Sadan
+                        </a>
+                    </li>
+                    <li class="hover:text-[#4a50c9] dark:hover:text-[#000cf9]">
+                        <a href="#">
+                            Vijaya F.M
+                        </a>
+                    </li>
+                    <li class="hover:text-[#4a50c9] dark:hover:text-[#000cf9]">
+                        <a href="#">
+                            Vijaya Laghubitta Bittiya Sanstha
+                        </a>
+                    </li>
+                    <li class="hover:text-[#4a50c9] dark:hover:text-[#000cf9]">
+                        <a href="#">
+                            VYCCU Savings and Credit Cooperative Limited
+                        </a>
+                    </li>
+                </ul>
+                <div class="flex  my-5 text-md">
+                    <a href="{{route('strategic')}}" class="px-4 py-1 bg-[#000cf9] text-white rounded-md shadow-lg hover:bg-[#4a50c9]">
+                      Show More
+                    </a>
+                  </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold py-4 dark:text-slate-300">
+                    Quick Links
+                </h3>
                 
+                <ul class="text-[#000cf9] dark:text-zinc-100  list-inside list-disc">
+                    <li class="hover:text-[#4a50c9] dark:hover:text-[#000cf9]">
+                        <a href="{{route('publications.report')}}">
+                            Report
+                        </a>
+                    </li>
+                    <li class="hover:text-[#4a50c9] dark:hover:text-[#000cf9]">
+                        <a href="{{route('publications.newsletter')}}">
+                            Newsletter
+                        </a>
+                    </li>
+                    <li class="hover:text-[#4a50c9] dark:hover:text-[#000cf9]">
+                        <a href="{{route('membership.gm')}}">
+                            General members
+                        </a>
+                    </li>
+                    
+                </ul>
             </div>
 
             <div>

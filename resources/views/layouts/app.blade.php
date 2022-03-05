@@ -16,14 +16,15 @@
 
         <!-- Animate CSS -->
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> --}}
-        {{-- <link href="{{asset('css/animate.css')}}" rel="stylesheet"> --}}
+        <link href="{{asset('css/animate.css')}}" rel="stylesheet">
 
         <!-- Alpine JS -->
         <script src="//unpkg.com/alpinejs" defer></script>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        {{-- <script src="{{ asset('js/wow.min.js') }}" ></script> --}}
+
+        <script src="{{ asset('js/wow.min.js') }}" ></script>
 
         <style>
             [x-cloak] {
@@ -46,14 +47,26 @@
             }
         </script>
     </head>
-    <body class="font-sans antialiased dark:bg-gray-800 dark:text-slate-300">
+    <body class="font-sans antialiased bg-slate-100 dark:bg-gray-800 dark:text-slate-300">
         <x-navigation></x-navigation>
+
+        {{-- Reservation Button Start --}}
+      <div class="fixed bottom-5 right-4 z-50">
+        <a  href="{{route('reservation')}}" class="px-4 py-2 bg-[#000cf9] hover:bg-[#4a50c9] rounded-md shadow-md text-white font-semibold text-sm md:text-lg ">
+          <i class="far fa-hand-point-up"></i> Click Here For Reservation
+        </a>
+      </div>
+    {{-- Reservation Button End --}}
 
         @yield('content')
 
         <x-footer />
 
         @yield('js')
+
+        <script>
+            new WOW().init();
+            </script>
 
         <script>
             var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
