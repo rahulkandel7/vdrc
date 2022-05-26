@@ -42,7 +42,7 @@ class PublicationController extends Controller
         $data = $request->validate([
             'name' => 'required|string',
             'type' => 'required|string',
-            'filepath' => 'required|image|mimes:png,jpg'
+            'filepath' => 'required'
         ]);
 
         if($request->has('filepath')){

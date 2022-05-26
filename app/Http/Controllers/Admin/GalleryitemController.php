@@ -43,7 +43,7 @@ class GalleryitemController extends Controller
         $data = $request->validate([
             'photopath' => 'required|image|mimes:png,jpg',
         ]);
-        $data['gallery_id'] = 1;
+        $data['gallery_id'] = $request->gallery_id;
 
         if($request->has('photopath')){
             $fname = Str::random(20);

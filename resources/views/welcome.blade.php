@@ -74,8 +74,8 @@
   {{-- Slideshow end --}}
 
     {{-- About Us Start --}}  
-        <div class="w-full bg-[#a7b8d338] py-8">
-          <div id="about-us" class="w-11/12 mx-auto">
+        <div class="w-full bg-[#a7b8d338] py-8 " id="about-us">
+          <div  class="w-11/12 mx-auto pt-12">
             <div >
               
                 <div class="my-5">
@@ -170,7 +170,7 @@
     {{-- CSO Roles End --}}
 
     {{-- Programs Start --}}
-      <div class="w-full bg-[#a7b8d338] py-8">
+      <div class="w-full bg-[#a7b8d338] py-8" id="programs">
         <div class="w-11/12 mx-auto py-5">
           <div class="flex justify-center wow fadeInDown"  data-wow-duration="2s">
             <div>
@@ -293,7 +293,7 @@
     {{-- Programs End --}}
 
     {{-- Program and major accomplishment Start --}}  
-      <div id="programs" class="w-11/12 mx-auto">
+      <div  class="w-11/12 mx-auto">
         <div class="">
             <div class="px-8 my-5">
               <div class="shadow-lg shadow-[#a33a4621] dark:shadow-gray-900 dark:shadow-md dark:text-zinc-400 w-full rounded pb-2">
@@ -597,7 +597,7 @@
                 // Only prevent default if animation is actually gonna happen
                 event.preventDefault();
                 $('html, body').animate({
-                  scrollTop: target.offset().top
+                  scrollTop: target.offset().top - 100
                 }, 1000, function() {
                   // Callback after animation
                   // Must change focus!
